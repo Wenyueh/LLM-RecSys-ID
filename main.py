@@ -166,13 +166,6 @@ def trainer(
                 logger.log("trained model exists and we start from this")
             model = load_model(model, "best_" + args.model_dir, rank)
     model.to(args.gpu)
-    # model = P5(config).to(args.gpu)
-    # if rank == 0:
-    #    logger.log("finished building model")
-    # if os.path.isfile(args.model_dir):
-    #    logger.log("load pretrained model")
-    # configure map_location properly
-    #    model = load_model(model, "good" + args.model_dir, rank)
 
     optimizer, scheduler = create_optimizer_and_scheduler(
         args, logger, model, batch_per_epoch
@@ -201,38 +194,7 @@ def trainer(
 
     number_of_tasks = 1
     train_sequential_item_dataloader = train_loaders[0]
-    """
-    print("train")
-    for batch in tqdm(train_sequential_item_dataloader):
-        input_ids = batch[0].tolist()
-        output_ids = batch[-2].tolist()
-        decoded_input = tokenizer.batch_decode(input_ids, skip_special_tokens=True)
-        decode_ouput = tokenizer.batch_decode(output_ids, skip_special_tokens=True)
-        for i, o in zip(decoded_input, decode_ouput):
-            if "user_1 " in i or "User_1 " in i:
-                print((i, o))
-                time.sleep(5)
-    print("val")
-    for batch in tqdm(val_loader):
-        input_ids = batch[0].tolist()
-        output_ids = batch[-2].tolist()
-        decoded_input = tokenizer.batch_decode(input_ids, skip_special_tokens=True)
-        decode_ouput = tokenizer.batch_decode(output_ids, skip_special_tokens=True)
-        for i, o in zip(decoded_input, decode_ouput):
-            if "user_1 " in i or "User_1 " in i:
-                print((i, o))
-                time.sleep(5)
-    print("test")
-    for batch in tqdm(test_loader):
-        input_ids = batch[0].tolist()
-        output_ids = batch[-2].tolist()
-        decoded_input = tokenizer.batch_decode(input_ids, skip_special_tokens=True)
-        decode_ouput = tokenizer.batch_decode(output_ids, skip_special_tokens=True)
-        for i, o in zip(decoded_input, decode_ouput):
-            if "user_1 " in i or "User_1 " in i:
-                print((i, o))
-                time.sleep(5)
-    """
+
     # train_sequential_yesno_dataloader = train_loaders[1]
     # train_direct_yesno_dataloader = train_loaders[2]
     # train_direct_candidate_dataloader = train_loaders[3]
@@ -348,14 +310,12 @@ def trainer(
 
             dist.barrier()
 
-            """
             if rank == 0:
                 logger.log("---------- save model ----------")
             if args.distributed:
                 torch.save(model.module.state_dict(), args.model_dir)
             else:
                 torch.save(model.state_dict(), args.model_dir)
-            """
 
         if rank == 0:
             logger.log(
@@ -685,13 +645,6 @@ def main_worker(local_rank, args, logger):
         val_sequence,
         test_sequence,
     )
-    """
-    print("validation")
-    for batch in val_loader:
-        input_ids = batch[0].tolist()
-        print(tokenizer.batch_decode(input_ids[:4]))
-        time.sleep(5)
-    """
 
     test_loader = load_eval_dataloaders(
         args,
@@ -703,13 +656,6 @@ def main_worker(local_rank, args, logger):
         test_sequence,
         test_sequence,
     )
-    """
-    print("test")
-    for batch in test_loader:
-        input_ids = batch[0].tolist()
-        print(tokenizer.batch_decode(input_ids[:4]))
-        time.sleep(5)
-    """
 
     # pretrain using meta data
     if args.use_meta_data:
