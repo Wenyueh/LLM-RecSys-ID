@@ -39,25 +39,6 @@ def random_number_remove_zero(max_number, min_number=0):
     return lambda x: mapping[x]
 
 
-def random_one_token(tokenizer):
-    token_range = list(range(20, 32000))
-    random.shuffle(token_range)
-    mapping = {str(i): "<pad>" + tokenizer.decode(v) for i, v in enumerate(token_range)}
-    return lambda x: mapping[x]
-
-
-def random_two_token(tokenizer):
-    one_token_range = list(range(20, 32000))
-    two_token_range = list(range(20, 32000))
-    random.shuffle(one_token_range)
-    random.shuffle(two_token_range)
-    mapping = {
-        str(i): tokenizer.decode([v1, v2])
-        for i, (v1, v2) in enumerate(zip(one_token_range, two_token_range))
-    }
-    return lambda x: mapping[x]
-
-
 def no_tokenization(args):
     if args.data_order != "remapped_sequential":
         # has to be the remodeled tokenizer
@@ -72,64 +53,6 @@ def no_tokenization(args):
     return lambda x: mapping[x]
 
 
-### item resolution
-def item_resolution(resolution, overlap=0):
-    new_tokens = 10 ** resolution
-    # has to be the remodeled tokenizer
-    mapping = {
-        str(i): "<extra_id_{}>".format(str(v)) for i, v in enumerate(range(new_tokens))
-    }
-
-    mapping_fct = lambda x: mapping[x]
-
-    final_representation_fct = lambda item: "".join(
-        [mapping_fct(a) for a in composition_resolution(item, resolution, overlap)]
-    )
-
-    return final_representation_fct
-
-
-def composition_resolution(item_index, resolution, overlap):
-    assert type(item_index) == str
-    assert resolution > 0
-    assert resolution > overlap
-    sub_indices = []
-    if overlap == 1:
-        number_of_sub_indices = math.ceil(
-            (len(item_index) - resolution + 1) / (resolution - overlap)
-        )
-    else:
-        number_of_sub_indices = math.ceil(len(item_index) / (resolution - overlap))
-    for i in range(number_of_sub_indices):
-        sub_indices.append(
-            item_index[
-                i * (resolution - overlap) : (i * (resolution - overlap) + resolution)
-            ]
-        )
-    split_zero_sub_indices = []
-    for i in range(len(sub_indices)):
-        if sub_indices[i].startswith("0"):
-            zero_index = sub_indices[i]
-            j = 0
-            while zero_index[j:].startswith("0"):
-                split_zero_sub_indices.append("0")
-                j += 1
-            if zero_index[j:] != "":
-                split_zero_sub_indices.append(zero_index[j:])
-        else:
-            split_zero_sub_indices.append(sub_indices[i])
-
-    return split_zero_sub_indices
-
-
-### change base function
-def change_base(n, k):
-    assert isinstance(n, str)
-    n = int(n)
-    base_changed = np.base_repr(n, base=k)
-    return base_changed
-
-
 def amazon_asin(args):
     id2item_dir = args.data_dir + args.task + "/datamaps.json"
     with open(id2item_dir, "r") as f:
@@ -137,37 +60,6 @@ def amazon_asin(args):
     id2item = datamaps["id2item"]
 
     return id2item
-
-
-"""
-def composition_resolution(item_index, resolution, overlap):
-    assert type(item_index) == str
-    assert resolution > 0
-    assert resolution > overlap
-    # split by 0
-    zero_split = item_index.replace("0", ",0,")
-    zero_split = zero_split.split(",")
-    zero_split = [c for c in zero_split if c != ""]
-    subparts = []
-    for subpart in zero_split:
-        if subpart == "0":
-            subparts.append(subpart)
-        else:
-            resoluted_subpart = []
-            number_of_sub_indices = math.ceil(len(subpart) / (resolution - overlap))
-            for i in range(number_of_sub_indices):
-                resoluted_subpart.append(
-                    subpart[
-                        i
-                        * (resolution - overlap) : (
-                            i * (resolution - overlap) + resolution
-                        )
-                    ]
-                )
-            subparts += resoluted_subpart
-
-    return subparts
-"""
 
 
 def load_meta(args):
