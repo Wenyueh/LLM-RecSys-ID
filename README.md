@@ -9,7 +9,7 @@ Recommendation foundation models utilize large language models as their backbone
 # Before running script
 download meta data from here: https://drive.google.com/file/d/1qGxgmx7G_WB7JE4Cn_bEcZ_o_NAJLE3G/view, put in the data/ directory
 
-create environment in requirements.txt, Python version 3.9.7
+create environment using packages in requirements.txt, Python version 3.9.7
 
 # random indexing
 ```
