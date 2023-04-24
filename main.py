@@ -2,7 +2,6 @@ from sklearn.cluster import SpectralClustering
 import argparse
 from transformers import AutoTokenizer
 from data import load_train_dataloaders, load_eval_dataloaders, load_data
-from pretrain_data import meta_loader, review_loader
 from tqdm import tqdm
 from utils import (
     set_seed,
@@ -26,7 +25,6 @@ from item_rep_method import (
     load_meta,
     build_category_map_modified_yelp,
 )
-from pretrain_main import pretrain_using_meta_data, pretrain_using_review_data
 from modeling_p5 import P5
 import torch
 from torch.nn.parallel import DistributedDataParallel as DDP
@@ -140,8 +138,6 @@ def trainer(
     train_loaders,
     val_loader,
     test_loader,
-    pretrain_loaders,
-    review_loaders,
     remapped_all_items,
     batch_per_epoch,
     tokenizer,
@@ -185,11 +181,6 @@ def trainer(
             logger.log("model dataparallel set")
         if args.distributed:
             model = DDP(model, device_ids=[args.gpu], find_unused_parameters=True)
-
-    if args.use_meta_data:
-        model = pretrain_using_meta_data(args, logger, rank, model, pretrain_loaders)
-    if args.use_review_data:
-        model = pretrain_using_review_data(args, logger, rank, model, review_loaders)
 
     if rank == 0:
         logger.log("start training")
@@ -612,32 +603,6 @@ def main_worker(local_rank, args, logger):
         test_sequence,
     )
 
-    # pretrain using meta data
-    if args.use_meta_data:
-        (
-            pretrain_title_dataloader,
-            pretrain_description_identification_dataloader,
-            pretrain_category_datalaoder,
-        ) = meta_loader(args, tokenizer, all_items, remapped_all_items)
-        pretrain_loaders = [
-            pretrain_title_dataloader,
-            pretrain_description_identification_dataloader,
-            pretrain_category_datalaoder,
-        ]
-    else:
-        pretrain_loaders = None
-
-    if args.use_review_data:
-        (
-            pretrain_review_item_dataloader,
-            pretrain_review_user_dataloader,
-        ) = review_loader(args, tokenizer, all_items, remapped_all_items)
-        review_loaders = [
-            pretrain_review_item_dataloader,
-            pretrain_review_user_dataloader,
-        ]
-    else:
-        review_loaders = None
 
     trainer(
         args,
@@ -645,8 +610,6 @@ def main_worker(local_rank, args, logger):
         train_loaders,
         val_loader,
         test_loader,
-        pretrain_loaders,
-        review_loaders,
         remapped_all_items,
         batch_per_epoch,
         tokenizer,
@@ -823,17 +786,7 @@ def parse_argument():
     parser.add_argument(
         "--no_pretrain", action="store_true", help="does not use pretrained T5 model"
     )
-    parser.add_argument(
-        "--use_meta_data",
-        action="store_true",
-        help="use meta data identification tasks to pretrain the model",
-    )
-    parser.add_argument(
-        "--use_review_data",
-        action="store_true",
-        help="use user review data identification tasks to pretrain the model",
-    )
-
+    
     # whether modify the evaluation setting
     parser.add_argument(
         "--remove_last_item",
