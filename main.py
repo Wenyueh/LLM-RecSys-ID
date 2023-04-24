@@ -186,18 +186,6 @@ def trainer(
         if args.distributed:
             model = DDP(model, device_ids=[args.gpu], find_unused_parameters=True)
 
-    """
-    if args.eval_only:
-        if os.path.isfile("best_" + args.model_dir):
-            if rank == 0:
-                logger.log("trained model exists and we start from this")
-            # model = load_model(model, "best_" + args.model_dir, rank)
-            map_location = {"cuda:%d" % 0: "cuda:%d" % rank}
-            model.load_state_dict(
-                torch.load("best_" + args.model_dir, map_location=map_location)
-            )
-    """
-
     if args.use_meta_data:
         model = pretrain_using_meta_data(args, logger, rank, model, pretrain_loaders)
     if args.use_review_data:
@@ -242,11 +230,6 @@ def trainer(
                     print("***")
                     time.sleep(10)
 
-    # train_sequential_yesno_dataloader = train_loaders[1]
-    # train_direct_yesno_dataloader = train_loaders[2]
-    # train_direct_candidate_dataloader = train_loaders[3]
-    # train_direct_straightforward_dataloader = train_loaders[4]
-
     for epoch in range(args.epochs):
         if rank == 0:
             logger.log("---------- training epoch {} ----------".format(epoch))
@@ -257,52 +240,7 @@ def trainer(
         if not args.eval_only:
             model.train()
 
-            # sequential_item_iterator = iter(train_sequential_item_dataloader)
-            # sequential_yesno_iterator = iter(train_sequential_yesno_dataloader)
-            # direct_yesno_iterator = iter(train_direct_yesno_dataloader)
-            # direct_candidate_iterator = iter(train_direct_candidate_dataloader)
-            # direct_straightforward_iterator = iter(train_direct_straightforward_dataloader)
-
             for batch in tqdm(train_loaders[0]):
-                """
-                for i in tqdm(range(batch_per_epoch)):
-                batch = next(sequential_item_iterator)
-
-                # for i in tqdm(range(100)):
-                if (i + 1) % number_of_tasks == 1:
-                    try:
-                        batch = next(sequential_item_iterator)
-                    except StopIteration as e:
-                        sequential_item_iterator = iter(train_sequential_item_dataloader)
-                        batch = next(sequential_item_iterator)
-                elif (i + 1) % number_of_tasks == 0:
-                    try:
-                        batch = next(sequential_yesno_iterator)
-                    except StopIteration as e:
-                        sequential_yesno_iterator = iter(train_sequential_yesno_dataloader)
-                        batch = next(sequential_yesno_iterator)
-                elif (i + 1) % number_of_tasks == 3:
-                    try:
-                        batch = next(direct_yesno_iterator)
-                    except StopIteration as e:
-                        direct_yesno_iterator = iter(train_direct_yesno_dataloader)
-                        batch = next(direct_yesno_iterator)
-                elif (i + 1) % number_of_tasks == 4:
-                    try:
-                        batch = next(direct_candidate_iterator)
-                    except StopIteration as e:
-                        direct_candidate_iterator = iter(train_direct_candidate_dataloader)
-                        batch = next(direct_candidate_iterator)
-                else:
-                    assert (i + 1) % number_of_tasks == 0
-                    try:
-                        batch = next(direct_straightforward_iterator)
-                    except StopIteration as e:
-                        direct_straightforward_iterator = iter(
-                            train_direct_straightforward_dataloader
-                        )
-                        batch = next(direct_straightforward_iterator)
-                """
 
                 input_ids = batch[0].to(args.gpu)
                 attn = batch[1].to(args.gpu)
