@@ -99,6 +99,9 @@
  ```
  
  # collaborative indexing 
+ 
+ need to run ```CID_generation.py''' to generate files, which requires the input file of remapped_sequential_data.txt
+ 
  ```
  CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch \
    --master_port 123227 \
