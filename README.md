@@ -6,8 +6,10 @@ Recommendation foundation models utilize large language models as their backbone
 
 <img width="911" alt="Screen Shot 2023-04-24 at 1 58 10 PM" src="https://user-images.githubusercontent.com/28013619/234078088-3d020437-cf7b-4063-bf8b-940d8fa44dd6.png">
 
-# download meta_data 
+# Before running script
 download from here: https://drive.google.com/file/d/1qGxgmx7G_WB7JE4Cn_bEcZ_o_NAJLE3G/view
+
+create environment in requirements.txt
 
 # random indexing
 ```
