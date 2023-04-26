@@ -355,7 +355,7 @@ for k,v in renumbered_data.items():
   else:
     count[tuple(v)] += 1
 for k,v in count.items():
-  if v > max_number:
+  if v > maximum_cluster_size:
     print(k)
     print(v)
     
