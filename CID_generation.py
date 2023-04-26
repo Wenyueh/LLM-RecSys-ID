@@ -346,6 +346,20 @@ for p in ordered_positions:
     start += 1
 
 renumbered_data = {k: [renumber_map[item] for item in v] for k, v in new_data.items()}
+
+# check repetition
+count = {}
+for k,v in renumbered_data.items():
+  if tuple(v) not in count:
+    count[tuple(v)] = 1
+  else:
+    count[tuple(v)] += 1
+for k,v in count.items():
+  if v > max_number:
+    print(k)
+    print(v)
+    
+    
 regroup = [(k, v) for k, v in renumbered_data.items()]
 regroup = sorted(regroup, key=lambda x: x[1])
 
