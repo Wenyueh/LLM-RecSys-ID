@@ -56,7 +56,7 @@ for pair, freq in sorted_pair_freqs:
 
 ###### apply clustering for the first time, k and N are up to change
 maximum_cluster_size = 500
-number_of_clusters = 20
+number_of_clusters = 20  # can try 10 & 20 & 30
 # here adjacency matrix is the affinity matrix
 begin_time = time.time()
 clustering = SpectralClustering(
@@ -299,7 +299,8 @@ with open(
     json.dump(item_CF_index_map, f)
 
 
-###### apply indexing
+##########################################################
+###### apply indexing method 1 , described in paper ######
 with open(
     "c{}_{}_CF_index.json".format(number_of_clusters, maximum_cluster_size), "w"
 ) as f:
@@ -349,17 +350,16 @@ renumbered_data = {k: [renumber_map[item] for item in v] for k, v in new_data.it
 
 # check repetition
 count = {}
-for k,v in renumbered_data.items():
-  if tuple(v) not in count:
-    count[tuple(v)] = 1
-  else:
-    count[tuple(v)] += 1
-for k,v in count.items():
-  if v > maximum_cluster_size:
-    print(k)
-    print(v)
-    
-    
+for k, v in renumbered_data.items():
+    if tuple(v) not in count:
+        count[tuple(v)] = 1
+    else:
+        count[tuple(v)] += 1
+for k, v in count.items():
+    if v > maximum_cluster_size:
+        print(k)
+        print(v)
+
 regroup = [(k, v) for k, v in renumbered_data.items()]
 regroup = sorted(regroup, key=lambda x: x[1])
 
@@ -390,3 +390,121 @@ for k, v in final_count.items():
 ###### save result
 with open("computed_optimal_{}_CF_index.json".format(maximum_cluster_size), "w") as f:
     json.dump(final_data, f)
+
+
+###################################################################################
+###### apply indexing method 2, no repetition in cluster nodes and leaf node ######
+with open(
+    "c{}_{}_CF_index.json".format(number_of_clusters, maximum_cluster_size), "w"
+) as f:
+    data = json.load(f)
+
+###### check repetition
+count = {}
+for k, v in data.items():
+    if tuple(v) not in count:
+        count[tuple(v)] = 1
+    else:
+        count[tuple(v)] += 1
+for k, v in count.items():
+    if v > maximum_cluster_size:
+        print(k)
+        print(v)
+
+# no repetition in non-leaf node, but usually will not exceed maximum_cluster_size in total
+reformed_item_CF_index_map = {}
+for item, labels in data.items():
+    reformed_item_CF_index_map[item] = [
+        "-".join(labels[: i + 1]) for i in range(len(labels))
+    ]
+
+
+###### actually wrte the indices
+enumeration_by_group = {}
+full_index = {}
+vocab = []
+for item, clusters in reformed_item_CF_index_map.items():
+    if tuple(clusters) not in enumeration_by_group:
+        full_index[item] = "".join(
+            ["<A" + c + ">" for c in clusters] + ["<A0" + str(0) + ">"]
+        )
+        enumeration_by_group[tuple(clusters)] = 1
+        vocab += ["<A" + c + ">" for c in clusters] + ["<A0" + str(0) + ">"]
+    else:
+        full_index[item] = "".join(
+            ["<A" + c + ">" for c in clusters]
+            + ["<A0" + str(enumeration_by_group[tuple(clusters)]) + ">"]
+        )
+        vocab += ["<A" + c + ">" for c in clusters] + [
+            "<A0" + str(enumeration_by_group[tuple(clusters)]) + ">"
+        ]
+        enumeration_by_group[tuple(clusters)] += 1
+
+###### save result
+with open(
+    "computed_separate_leaf_non_leaf_{}_{}_CF_index.json".format(
+        number_of_clusters, maximum_cluster_size
+    ),
+    "w",
+) as f:
+    json.dump([full_index, vocab], f)
+
+
+#####################################
+###### apply indexing CID +IID ######
+with open(
+    "c{}_{}_CF_index.json".format(number_of_clusters, maximum_cluster_size), "w"
+) as f:
+    data = json.load(f)
+
+###### check repetition
+count = {}
+for k, v in data.items():
+    if tuple(v) not in count:
+        count[tuple(v)] = 1
+    else:
+        count[tuple(v)] += 1
+for k, v in count.items():
+    if v > maximum_cluster_size:
+        print(k)
+        print(v)
+
+# no repetition in non-leaf node, but will not exceed maximum_cluster_size in total
+# & add final token, distinguish it from other indices by the starting of 0
+final_data = {}
+met_category = {}
+for k, v in data.items():
+    if count[tuple(v)] > 1:
+        if tuple(v) in met_category:
+            met_category[tuple(v)] += 1
+        else:
+            met_category[tuple(v)] = 0
+        i = met_category[tuple(v)]
+        final_data[k] = v + ["0" + k]
+    else:
+        final_data[k] = v
+
+
+###### actually write the indices
+computed_data = {}
+vocabulary = []
+for k, v in final_data.items():
+    final_string = ""
+    for i in range(len(v)):
+        if i != len(v) - 1:
+            final_string += "<A{}>".format("-".join(v[: i + 1]))
+            vocabulary.append("<A{}>".format("-".join(v[: i + 1])))
+        else:
+            final_string += "<A{}>".format(v[i])
+            vocabulary.append("<A{}>".format(v[i]))
+    computed_data[k] = final_string
+
+
+###### save result
+with open(
+    "computed_no_repetition_{}_{}_CF_index.json".format(
+        number_of_clusters, maximum_cluster_size
+    ),
+    "w",
+) as f:
+    json.dump([computed_data, vocabulary], f)
