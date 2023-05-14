@@ -17,8 +17,6 @@ from torch.utils.data.distributed import DistributedSampler
 from item_rep_method import (
     random_number,
     random_number_remove_zero,
-    random_one_token,
-    random_two_token,
     no_tokenization,
     item_resolution,
     change_base,
@@ -99,9 +97,6 @@ def load_data(args, tokenizer):
         remap_fct = random_number(
             min_number=args.min_random_number, max_number=args.max_random_number
         )
-
-    elif args.item_representation == "random_one_token":
-        remap_fct = random_one_token(tokenizer)
 
     elif args.item_representation == "no_tokenization":
         remap_fct = no_tokenization(args)
