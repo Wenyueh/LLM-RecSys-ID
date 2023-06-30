@@ -1,5 +1,13 @@
 # How to Index Item IDs for Recommendation Foundation Models
 
+This repo presents various methods for creating item IDs for recommendation foundation models, including Random Indexing (RID), Independent Indexing (IID), Title Indexing (TID), Sequential Indexing (SID), Collaborative Indexing (CID), Semantic Indexing (SemID), and Hybrid Indexing (HID).
+
+> Paper link: [https://arxiv.org/pdf/2305.06569.pdf](https://arxiv.org/pdf/2305.06569.pdf)
+
+A relevant repo (OpenP5) of benchmarking foundation models for recommendation is also available at GitHub:
+> Paper link: [https://arxiv.org/pdf/2306.11134.pdf](https://arxiv.org/pdf/2306.11134.pdf)
+> GitHub link: [https://github.com/agiresearch/OpenP5](https://github.com/agiresearch/OpenP5)
+
 # Abstract
 
 Recommendation foundation models utilize large language models as their backbone, converting recommendation tasks into natural language tasks. Items are represented as texts and tokenized by language model tokenizers, resulting in multiple tokens and corresponding embeddings for each item, in contrast to the single vector representations in traditional recommender systems. Therefore, creating item ID indexing compatible with language models is essential for recommendation foundation models. In this study, we systematically examine the item indexing problem for recommendation foundation models, using P5 as the representative backbone model and replicating its results with various indexing methods. To emphasize the importance of item indexing, we discuss the issues of several basic methods, such as independent indexing, title indexing, and random indexing, from empirical perspectives. We then propose four simple yet effective solutions, including sequential indexing, collaborative indexing, semantic (content-based) indexing, and hybrid indexing. Our reproducibility study of P5 highlights the significant influence of indexing methods on the model performance, and our results on real-world datasets validate the effectiveness of our proposed solutions.
