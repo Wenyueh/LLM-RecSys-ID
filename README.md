@@ -6,7 +6,7 @@ This repo presents various methods for creating item IDs for recommendation foun
 
 A relevant repo (OpenP5) of benchmarking foundation models for recommendation is also available at GitHub:
 > Paper link: [https://arxiv.org/pdf/2306.11134.pdf](https://arxiv.org/pdf/2306.11134.pdf)
-> 
+
 > GitHub link: [https://github.com/agiresearch/OpenP5](https://github.com/agiresearch/OpenP5)
 
 # Abstract
