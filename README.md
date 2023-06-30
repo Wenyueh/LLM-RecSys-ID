@@ -1,4 +1,4 @@
-# Item Indexing Methods for Recommendation Foundation Models: A Reproducibility Study
+# How to Index Item IDs for Recommendation Foundation Models
 
 # Abstract
 
