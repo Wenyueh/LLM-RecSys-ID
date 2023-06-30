@@ -15,7 +15,7 @@ conda create -n itemrep -y python=3.9.7 && conda activate itemrep
 pip install -r requirements.txt
 ```
 
-# random indexing
+# Random Indexing (RID)
 ```
  CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch \
    --master_port 123227 \
@@ -41,7 +41,7 @@ pip install -r requirements.txt
          --max_random_number 13000
  ```
  
- # independent indexing
+ # Independent Indexing (IID)
  ```
  CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch \
    --master_port 123227 \
@@ -64,7 +64,7 @@ pip install -r requirements.txt
          --data_order random
  ```
  
- # title indexing
+ # Title Indexing (TID)
  ```
  CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch \
    --master_port 123227 \
@@ -87,7 +87,7 @@ pip install -r requirements.txt
          --data_order random
  ```
  
- # sequential indexing (time sensitive)
+ # Sequential Indexing (SID, time sensitive)
  ```
  CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch \
    --master_port 123227 \
@@ -111,7 +111,7 @@ pip install -r requirements.txt
          --remapped_data_order original
  ```
  
- # collaborative indexing 
+ # Collaborative Indexing (CID)
  
  need to run CID_generation.py to generate files, which requires the input file of remapped_sequential_data.txt
  
@@ -140,7 +140,7 @@ pip install -r requirements.txt
          --cluster_number 20
  ```
 
-# semantic indexing
+# Semantic Indexing (SemID)
  ```
  CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch \
    --master_port 123227 \
@@ -163,7 +163,7 @@ pip install -r requirements.txt
          --data_order random
  ```
  
- # hybrid indexing (CID+IID)
+ # Hybrid Indexing (HID: CID+IID)
  ```
  CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch \
    --master_port 123227 \
