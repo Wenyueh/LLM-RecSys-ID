@@ -188,4 +188,14 @@ pip install -r requirements.txt
          --cluster_number 20 \
          --last_token_no_repetition
  ```
- 
+
+# Citation
+Please cite the following papers corresponding to the repository:
+```
+@article{hua2023index,
+  title={How to Index Item IDs for Recommendation Foundation Models},
+  author={Hua, Wenyue and Xu, Shuyuan and Ge, Yingqiang and Zhang, Yongfeng},
+  journal={arXiv:2305.06569},
+  year={2023}
+}
+```
