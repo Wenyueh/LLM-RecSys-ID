@@ -1,10 +1,11 @@
 # How to Index Item IDs for Recommendation Foundation Models
 
 This repo presents various methods for creating item IDs for recommendation foundation models, including Random Indexing (RID), Independent Indexing (IID), Title Indexing (TID), Sequential Indexing (SID), Collaborative Indexing (CID), Semantic Indexing (SemID), and Hybrid Indexing (HID).
-
+> paper: How to Index Item IDs for Recommendation Foundation Models <br>
 > Paper link: [https://arxiv.org/pdf/2305.06569.pdf](https://arxiv.org/pdf/2305.06569.pdf)
 
 A relevant repo (OpenP5) of benchmarking foundation models for recommendation is also available at GitHub:
+> Paper: OpenP5: Benchmarking Foundation Models for Recommendation
 > Paper link: [https://arxiv.org/pdf/2306.11134.pdf](https://arxiv.org/pdf/2306.11134.pdf) <br>
 > GitHub link: [https://github.com/agiresearch/OpenP5](https://github.com/agiresearch/OpenP5)
 
