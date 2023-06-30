@@ -198,4 +198,10 @@ Please cite the following papers corresponding to the repository:
   journal={arXiv:2305.06569},
   year={2023}
 }
+@article{xu2023openp5,
+  title={OpenP5: Benchmarking Foundation Models for Recommendation},
+  author={Shuyuan Xu and Wenyue Hua and Yongfeng Zhang},
+  journal={arXiv:2306.11134},
+  year={2023}
+}
 ```
