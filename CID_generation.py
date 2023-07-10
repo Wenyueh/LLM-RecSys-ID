@@ -395,7 +395,7 @@ with open("computed_optimal_{}_CF_index.json".format(maximum_cluster_size), "w")
 ###################################################################################
 ###### apply indexing method 2, no repetition in cluster nodes and leaf node ######
 with open(
-    "c{}_{}_CF_index.json".format(number_of_clusters, maximum_cluster_size), "w"
+    "c{}_{}_CF_index.json".format(number_of_clusters, maximum_cluster_size), "r"
 ) as f:
     data = json.load(f)
 
@@ -453,7 +453,7 @@ with open(
 #####################################
 ###### apply indexing CID +IID ######
 with open(
-    "c{}_{}_CF_index.json".format(number_of_clusters, maximum_cluster_size), "w"
+    "c{}_{}_CF_index.json".format(number_of_clusters, maximum_cluster_size), "r"
 ) as f:
     data = json.load(f)
 
