@@ -302,9 +302,9 @@ with open(
 ##########################################################
 ###### apply indexing method 1 , described in paper ######
 with open(
-    "c{}_{}_CF_index.json".format(number_of_clusters, maximum_cluster_size), "w"
+    "c{}_{}_CF_index.json".format(number_of_clusters, maximum_cluster_size), "r"
 ) as f:
-    json.dump(data, f)
+    data = json.load(f)
 
 ###### check repetition
 count = {}
