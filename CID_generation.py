@@ -304,7 +304,7 @@ with open(
 with open(
     "c{}_{}_CF_index.json".format(number_of_clusters, maximum_cluster_size), "w"
 ) as f:
-    data = json.load(f)
+    json.dump(data, f)
 
 ###### check repetition
 count = {}
