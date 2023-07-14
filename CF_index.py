@@ -302,7 +302,7 @@ def construct_indices_from_cluster_optimal_width(args):
             + "/CF_indices/computed_optimal_{}_CF_index.json".format(args.cluster_size),
             "r",
         ) as f:
-            clustering = json.load(f)
+            clustering, _ = json.load(f)
         vocabulary = ["<A{}>".format(i) for i in range(args.cluster_size)]
 
     CF_mapping = {
