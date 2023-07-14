@@ -389,7 +389,7 @@ for k, v in final_count.items():
 
 ###### save result
 with open("computed_optimal_{}_CF_index.json".format(maximum_cluster_size), "w") as f:
-    json.dump([final_data, None], f)
+    json.dump(final_data, f)
 
 
 ###################################################################################
@@ -442,7 +442,7 @@ for item, clusters in reformed_item_CF_index_map.items():
 
 ###### save result
 with open(
-    "computed_separate_leaf_non_leaf_{}_{}_CF_index.json".format(
+    "computed_{}_{}_CF_index.json".format(
         number_of_clusters, maximum_cluster_size
     ),
     "w",
