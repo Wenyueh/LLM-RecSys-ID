@@ -389,7 +389,7 @@ for k, v in final_count.items():
 
 ###### save result
 with open("computed_optimal_{}_CF_index.json".format(maximum_cluster_size), "w") as f:
-    json.dump(final_data, f)
+    json.dump([final_data, None], f)
 
 
 ###################################################################################
