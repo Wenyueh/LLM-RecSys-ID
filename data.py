@@ -18,7 +18,7 @@ from item_rep_method import (
     random_number,
     random_number_remove_zero,
     no_tokenization,
-    item_resolution,
+    #item_resolution,
     change_base,
     build_category_map,
     content_based_representation,
