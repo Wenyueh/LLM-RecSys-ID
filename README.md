@@ -30,8 +30,14 @@ CUDA Driver Version: 515.86.01
 
 CUDA Version: 11.7. 
 
+Variations in performance may occur using different environments or GPUs. You may need to tune the hyperparameters in such a case.
+
 # Log files
-All experiment log files are under the log directory. The log files can be used as reference for replicating experiments.
+All experiment log files are under the log directory. 
+
+The log files can be used as references for replicating experiments.
+
+You can use the log files to check the hyperparameter settings.
 
 # Random Indexing (RID)
 ```
