@@ -24,7 +24,11 @@ conda create -n itemrep -y python=3.9.7 && conda activate itemrep
 pip install -r requirements.txt
 ```
 
-Experiments are conducted on 2 or 4 A5000 GPUs with CUDA Driver Version: 515.86.01 and CUDA Version: 11.7. 
+Experiments are done on 2 or 4 A5000 GPUs with 
+
+CUDA Driver Version: 515.86.01
+
+CUDA Version: 11.7. 
 
 # Log files
 All experiment log files are under the log directory. The log files can be used as reference for replicating experiments.
