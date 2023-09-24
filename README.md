@@ -24,6 +24,9 @@ conda create -n itemrep -y python=3.9.7 && conda activate itemrep
 pip install -r requirements.txt
 ```
 
+# Log files
+All experiment log files are under the log directory. The log files can be used as reference for replicating experiments.
+
 # Random Indexing (RID)
 ```
  CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch \
