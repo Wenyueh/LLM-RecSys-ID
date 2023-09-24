@@ -1,0 +1,251 @@
+04/01/2023, 13:48:12: Namespace(seed=2022, data_dir='data/', logging_dir='log/pretrain_t5_small_beauty_CF_10_500_noreplast.log', model_dir='model/pretrain_t5_small_beauty_CF_10_500_noreplast.pt', task='beauty', max_history=20, sequential_num=10, negative_sample=2, yes_no_sample=5, direct_item_proportion=2, train_sequential_item_batch=64, train_sequential_yesno_batch=32, train_direct_yesno_batch=48, train_direct_candidate_batch=12, train_direct_straightforward_batch=48, meta_title_batch=128, meta_description_batch=12, meta_category_batch=128, meta_epochs=10, meta_lr=0.0001, review_user_batch=16, review_item_batch=16, review_epochs=2, review_lr=0.0001, model_type='t5-small', epochs=20, lr=0.001, clip=1.0, logging_step=1000, warmup_prop=0.05, gradient_accumulation_steps=1, weight_decay=0.01, adam_eps=1e-06, dropout=0.1, alpha=2, multiGPU=True, distributed=True, gpu='1,3', local_rank=0, evaluation_method='sequential_item', evaluation_template_id=0, item_representation='CF', cluster_number=10, cluster_size=500, optimal_width_in_CF=False, category_no_repetition=False, last_token_no_repetition=False, hybrid_order='CF_first', data_order='remapped_sequential', remapped_data_order='original', resolution=2, max_random_number=30000, min_random_number=1000, overlap=0, base=10, random_initialization_embedding=False, whole_word_embedding='shijie', no_pretrain=False, use_meta_data=False, use_review_data=False, remove_last_item=False, remove_first_item=False, eval_only=False, check_data=False)
+04/01/2023, 13:48:30: Process Launching at GPU 0
+04/01/2023, 13:48:31: Process Launching at GPU 1
+04/01/2023, 13:48:31: Building train loader at GPU 1
+04/01/2023, 13:48:31: Building train loader at GPU 0
+04/01/2023, 13:48:31: loading data ...
+04/01/2023, 13:48:31: *** use collaborative_filtering_based representation, extend vocab ***
+04/01/2023, 13:48:32: finished loading data
+04/01/2023, 13:48:32: length of training data is 10267
+04/01/2023, 13:48:32: loading model ...
+04/01/2023, 13:48:32: using only sequential data, and all possible sequences are here
+04/01/2023, 13:48:32: use pretrained T5
+04/01/2023, 13:48:39: Batch per epoch: 10267
+04/01/2023, 13:48:39: Total steps: 205340
+04/01/2023, 13:48:39: Warmup proportion:
+04/01/2023, 13:48:39: Warm up steps: 10267
+04/01/2023, 13:48:39: model dataparallel set
+04/01/2023, 13:48:39: start training
+04/01/2023, 13:48:39: ---------- training epoch 0 ----------
+04/01/2023, 13:52:04: total loss for 1000 steps : 5521.672502756119
+04/01/2023, 13:55:16: total loss for 2000 steps : 3307.5791788101196
+04/01/2023, 13:58:16: total loss for 3000 steps : 2445.350028514862
+04/01/2023, 14:01:38: total loss for 4000 steps : 2025.6848363876343
+04/01/2023, 14:05:00: total loss for 5000 steps : 1866.7102870941162
+04/01/2023, 14:08:23: total loss for 6000 steps : 1757.7412207126617
+04/01/2023, 14:11:37: total loss for 7000 steps : 1671.0169304609299
+04/01/2023, 14:14:58: total loss for 8000 steps : 1599.8735625743866
+04/01/2023, 14:18:14: total loss for 9000 steps : 1534.8161702156067
+04/01/2023, 14:21:30: total loss for 10000 steps : 1475.8998736143112
+04/01/2023, 14:22:23: ---------- start evaluation after epoch 0 ----------
+04/01/2023, 14:29:32: validation hit @ 1 is 0.005634054730817385
+04/01/2023, 14:29:32: validation hit @ 5 is 0.023430513324986586
+04/01/2023, 14:29:32: validation hit @ 10 is 0.0414952602396709
+04/01/2023, 14:29:32: validation ncdg @ 5 is 0.014416899867500723
+04/01/2023, 14:29:32: validation ncdg @ 10 is 0.02025153401971904
+04/01/2023, 14:36:41: test hit @ 1 is 0.0038454659273832945
+04/01/2023, 14:36:41: test hit @ 5 is 0.014755857628331247
+04/01/2023, 14:36:41: test hit @ 10 is 0.026828832051511358
+04/01/2023, 14:36:41: test ncdg @ 5 is 0.009201861376232258
+04/01/2023, 14:36:41: test ncdg @ 10 is 0.013057788743687479
+04/01/2023, 14:36:41: recall increases from 0 ----> 0.0414952602396709 at epoch 0
+04/01/2023, 14:39:40: validation hit @ 1 is 0.004382042568413522
+04/01/2023, 14:39:40: validation hit @ 5 is 0.02074763011983545
+04/01/2023, 14:39:40: validation hit @ 10 is 0.03684492935074227
+04/01/2023, 14:39:40: validation ncdg @ 5 is 0.01261618680812606
+04/01/2023, 14:39:40: validation ncdg @ 10 is 0.01783786914463718
+04/01/2023, 14:57:58: test hit @ 1 is 0.003219459846181363
+04/01/2023, 14:57:58: test hit @ 5 is 0.014845287068502952
+04/01/2023, 14:57:58: test hit @ 10 is 0.025219102128420677
+04/01/2023, 14:57:58: test ncdg @ 5 is 0.008884876748715836
+04/01/2023, 14:57:58: test ncdg @ 10 is 0.012223162243365272
+04/01/2023, 14:57:58: recall increases from 0 ----> 0.03684492935074227 at epoch 0
+04/01/2023, 14:57:58: save current best model to best_model/pretrain_t5_small_beauty_CF_10_500_noreplast.pt
+04/01/2023, 14:57:59: ---------- training epoch 1 ----------
+04/01/2023, 15:00:26: total loss for 11000 steps : 1431.4339431524277
+04/01/2023, 15:03:47: total loss for 12000 steps : 1376.731797337532
+04/01/2023, 15:07:07: total loss for 13000 steps : 1344.3725677728653
+04/01/2023, 15:10:25: total loss for 14000 steps : 1309.7468370199203
+04/01/2023, 15:13:44: total loss for 15000 steps : 1287.6369072198868
+04/01/2023, 15:17:04: total loss for 16000 steps : 1268.9400625228882
+04/01/2023, 15:20:21: total loss for 17000 steps : 1249.2618848085403
+04/01/2023, 15:23:42: total loss for 18000 steps : 1233.865848183632
+04/01/2023, 15:27:04: total loss for 19000 steps : 1229.3512219190598
+04/01/2023, 15:30:22: total loss for 20000 steps : 1211.708627462387
+04/01/2023, 15:32:09: ---------- start evaluation after epoch 1 ----------
+04/01/2023, 15:39:11: validation hit @ 1 is 0.010105526739402612
+04/01/2023, 15:39:11: validation hit @ 5 is 0.03738150599177249
+04/01/2023, 15:39:11: validation hit @ 10 is 0.05678769450903237
+04/01/2023, 15:39:11: validation ncdg @ 5 is 0.023705284972253274
+04/01/2023, 15:39:11: validation ncdg @ 10 is 0.02993300684247929
+04/01/2023, 15:46:18: test hit @ 1 is 0.005008048649615454
+04/01/2023, 15:46:18: test hit @ 5 is 0.024861384367733858
+04/01/2023, 15:46:18: test hit @ 10 is 0.03863351815417636
+04/01/2023, 15:46:18: test ncdg @ 5 is 0.014818323659396296
+04/01/2023, 15:46:18: test ncdg @ 10 is 0.019265732643239476
+04/01/2023, 15:46:18: recall increases from 0.0414952602396709 ----> 0.05678769450903237 at epoch 1
+04/01/2023, 15:49:06: validation hit @ 1 is 0.007959220175281704
+04/01/2023, 15:49:06: validation hit @ 5 is 0.03344661062421749
+04/01/2023, 15:49:06: validation hit @ 10 is 0.05714541226971919
+04/01/2023, 15:49:06: validation ncdg @ 5 is 0.020280039711498936
+04/01/2023, 15:49:06: validation ncdg @ 10 is 0.027942209006278054
+04/01/2023, 16:06:17: test hit @ 1 is 0.005723484170989089
+04/01/2023, 16:06:17: test hit @ 5 is 0.024414237166875335
+04/01/2023, 16:06:17: test hit @ 10 is 0.04221069576104453
+04/01/2023, 16:06:17: test ncdg @ 5 is 0.014804073431934281
+04/01/2023, 16:06:17: test ncdg @ 10 is 0.020551662705878694
+04/01/2023, 16:06:17: recall increases from 0.03684492935074227 ----> 0.05714541226971919 at epoch 1
+04/01/2023, 16:06:17: save current best model to best_model/pretrain_t5_small_beauty_CF_10_500_noreplast.pt
+04/01/2023, 16:06:37: ---------- training epoch 2 ----------
+04/01/2023, 16:08:11: total loss for 21000 steps : 1203.0777082443237
+04/01/2023, 16:11:32: total loss for 22000 steps : 1192.7702924013138
+04/01/2023, 16:14:46: total loss for 23000 steps : 1185.516633272171
+04/01/2023, 16:18:06: total loss for 24000 steps : 1175.1833711862564
+04/01/2023, 16:21:19: total loss for 25000 steps : 1172.7731533050537
+04/01/2023, 16:24:41: total loss for 26000 steps : 1161.374852180481
+04/01/2023, 16:28:02: total loss for 27000 steps : 1160.5663369894028
+04/01/2023, 16:31:25: total loss for 28000 steps : 1149.0304889678955
+04/01/2023, 16:34:48: total loss for 29000 steps : 1144.730921804905
+04/01/2023, 16:37:45: total loss for 30000 steps : 1138.7082501649857
+04/01/2023, 16:40:26: ---------- start evaluation after epoch 2 ----------
+04/01/2023, 16:47:33: validation hit @ 1 is 0.015292434269361473
+04/01/2023, 16:47:33: validation hit @ 5 is 0.04820246825254874
+04/01/2023, 16:47:33: validation hit @ 10 is 0.07333214094079771
+04/01/2023, 16:47:33: validation ncdg @ 5 is 0.03190912876729414
+04/01/2023, 16:47:33: validation ncdg @ 10 is 0.03994866230149126
+04/01/2023, 16:54:42: test hit @ 1 is 0.010999821141119656
+04/01/2023, 16:54:42: test hit @ 5 is 0.03380432838490431
+04/01/2023, 16:54:42: test hit @ 10 is 0.05213736362010374
+04/01/2023, 16:54:42: test ncdg @ 5 is 0.022544659631416986
+04/01/2023, 16:54:42: test ncdg @ 10 is 0.028443975270252442
+04/01/2023, 16:54:42: recall increases from 0.05678769450903237 ----> 0.07333214094079771 at epoch 2
+04/01/2023, 17:02:23: validation hit @ 1 is 0.013146127705240564
+04/01/2023, 17:02:23: validation hit @ 5 is 0.048291897692720444
+04/01/2023, 17:02:23: validation hit @ 10 is 0.07377928814165623
+04/01/2023, 17:02:23: validation ncdg @ 5 is 0.03073124283078569
+04/01/2023, 17:02:23: validation ncdg @ 10 is 0.03895301802314119
+04/01/2023, 17:22:33: test hit @ 1 is 0.01028438561974602
+04/01/2023, 17:22:33: test hit @ 5 is 0.03299946342335897
+04/01/2023, 17:22:33: test hit @ 10 is 0.05294222858164908
+04/01/2023, 17:22:33: test ncdg @ 5 is 0.021558318055754033
+04/01/2023, 17:22:33: test ncdg @ 10 is 0.028030911827648032
+04/01/2023, 17:22:33: recall increases from 0.05714541226971919 ----> 0.07377928814165623 at epoch 2
+04/01/2023, 17:22:33: save current best model to best_model/pretrain_t5_small_beauty_CF_10_500_noreplast.pt
+04/01/2023, 17:22:54: ---------- training epoch 3 ----------
+04/01/2023, 17:23:34: total loss for 31000 steps : 1134.8926901221275
+04/01/2023, 17:26:54: total loss for 32000 steps : 1127.4065282940865
+04/01/2023, 17:30:03: total loss for 33000 steps : 1119.6066823005676
+04/01/2023, 17:33:20: total loss for 34000 steps : 1116.7425915002823
+04/01/2023, 17:36:40: total loss for 35000 steps : 1108.6799115538597
+04/01/2023, 17:40:02: total loss for 36000 steps : 1101.3389593362808
+04/01/2023, 17:43:20: total loss for 37000 steps : 1098.9175771474838
+04/01/2023, 17:46:35: total loss for 38000 steps : 1093.6886199712753
+04/01/2023, 17:49:55: total loss for 39000 steps : 1083.6389073729515
+04/01/2023, 17:53:05: total loss for 40000 steps : 1079.6504793167114
+04/01/2023, 17:56:26: total loss for 41000 steps : 1072.551313340664
+04/01/2023, 17:56:40: ---------- start evaluation after epoch 3 ----------
+04/01/2023, 18:03:51: validation hit @ 1 is 0.022625648363441244
+04/01/2023, 18:03:51: validation hit @ 5 is 0.06027544267572885
+04/01/2023, 18:03:51: validation hit @ 10 is 0.08585226256483634
+04/01/2023, 18:03:51: validation ncdg @ 5 is 0.041423427347345165
+04/01/2023, 18:03:51: validation ncdg @ 10 is 0.049632207185114914
+04/01/2023, 18:11:01: test hit @ 1 is 0.01681273475228045
+04/01/2023, 18:11:01: test hit @ 5 is 0.04292613128241817
+04/01/2023, 18:11:01: test hit @ 10 is 0.06295832588087999
+04/01/2023, 18:11:01: test ncdg @ 5 is 0.029952452632893527
+04/01/2023, 18:11:01: test ncdg @ 10 is 0.03640379075173271
+04/01/2023, 18:11:01: recall increases from 0.07333214094079771 ----> 0.08585226256483634 at epoch 3
+04/01/2023, 18:11:17: validation hit @ 1 is 0.02074763011983545
+04/01/2023, 18:11:17: validation hit @ 5 is 0.05768198891074942
+04/01/2023, 18:11:17: validation hit @ 10 is 0.0832588087998569
+04/01/2023, 18:11:17: validation ncdg @ 5 is 0.03935991908203082
+04/01/2023, 18:11:17: validation ncdg @ 10 is 0.047611949409371974
+04/01/2023, 18:29:37: test hit @ 1 is 0.013503845465927384
+04/01/2023, 18:29:37: test hit @ 5 is 0.03934895367554999
+04/01/2023, 18:29:37: test hit @ 10 is 0.062153460919334644
+04/01/2023, 18:29:37: test ncdg @ 5 is 0.026329607001199858
+04/01/2023, 18:29:37: test ncdg @ 10 is 0.0336129574544216
+04/01/2023, 18:29:37: recall increases from 0.07377928814165623 ----> 0.0832588087998569 at epoch 3
+04/01/2023, 18:29:37: save current best model to best_model/pretrain_t5_small_beauty_CF_10_500_noreplast.pt
+04/01/2023, 18:29:38: ---------- training epoch 4 ----------
+04/01/2023, 18:32:47: total loss for 42000 steps : 1060.5063537359238
+04/01/2023, 18:35:49: total loss for 43000 steps : 1054.969839990139
+04/01/2023, 18:38:48: total loss for 44000 steps : 1048.6237481236458
+04/01/2023, 18:42:10: total loss for 45000 steps : 1042.1910083293915
+04/01/2023, 18:45:28: total loss for 46000 steps : 1036.9872851371765
+04/01/2023, 18:48:50: total loss for 47000 steps : 1023.6323693394661
+04/01/2023, 18:52:06: total loss for 48000 steps : 1018.2939048409462
+04/01/2023, 18:55:27: total loss for 49000 steps : 1009.0548471808434
+04/01/2023, 18:58:43: total loss for 50000 steps : 1005.4045480489731
+04/01/2023, 19:02:00: total loss for 51000 steps : 996.0305678844452
+04/01/2023, 19:03:07: ---------- start evaluation after epoch 4 ----------
+04/01/2023, 19:10:19: validation hit @ 1 is 0.025755678769450903
+04/01/2023, 19:10:19: validation hit @ 5 is 0.0671615095689501
+04/01/2023, 19:10:19: validation hit @ 10 is 0.09586835986406725
+04/01/2023, 19:10:19: validation ncdg @ 5 is 0.046854843186614765
+04/01/2023, 19:10:19: validation ncdg @ 10 is 0.05614466842601527
+04/01/2023, 19:17:23: test hit @ 1 is 0.018243605795027724
+04/01/2023, 19:17:23: test hit @ 5 is 0.04864961545340726
+04/01/2023, 19:17:23: test hit @ 10 is 0.07252727597925238
+04/01/2023, 19:17:23: test ncdg @ 5 is 0.033785750550986725
+04/01/2023, 19:17:23: test ncdg @ 10 is 0.041494290414182136
+04/01/2023, 19:17:23: recall increases from 0.08585226256483634 ----> 0.09586835986406725 at epoch 4
+04/01/2023, 19:21:41: validation hit @ 1 is 0.023967089966016812
+04/01/2023, 19:21:41: validation hit @ 5 is 0.06251117868002146
+04/01/2023, 19:21:41: validation hit @ 10 is 0.09130745841531032
+04/01/2023, 19:21:41: validation ncdg @ 5 is 0.04346520971399165
+04/01/2023, 19:21:41: validation ncdg @ 10 is 0.05266698332948718
+04/01/2023, 19:38:29: test hit @ 1 is 0.01421928098730102
+04/01/2023, 19:38:29: test hit @ 5 is 0.044625290645680556
+04/01/2023, 19:38:29: test hit @ 10 is 0.06760865676980862
+04/01/2023, 19:38:29: test ncdg @ 5 is 0.02967119294878926
+04/01/2023, 19:38:29: test ncdg @ 10 is 0.03712878129362817
+04/01/2023, 19:38:29: recall increases from 0.0832588087998569 ----> 0.09130745841531032 at epoch 4
+04/01/2023, 19:38:29: save current best model to best_model/pretrain_t5_small_beauty_CF_10_500_noreplast.pt
+04/01/2023, 19:39:32: ---------- training epoch 5 ----------
+04/01/2023, 19:41:46: total loss for 52000 steps : 985.2810810208321
+04/01/2023, 19:45:06: total loss for 53000 steps : 977.6610960960388
+04/01/2023, 19:48:24: total loss for 54000 steps : 969.042992413044
+04/01/2023, 19:51:45: total loss for 55000 steps : 957.9216893911362
+04/01/2023, 19:54:57: total loss for 56000 steps : 946.8123497366905
+04/01/2023, 19:58:15: total loss for 57000 steps : 938.2175241112709
+04/01/2023, 20:01:26: total loss for 58000 steps : 928.6331817507744
+04/01/2023, 20:04:46: total loss for 59000 steps : 921.2376801371574
+04/01/2023, 20:08:06: total loss for 60000 steps : 912.7012841105461
+04/01/2023, 20:11:29: total loss for 61000 steps : 903.2779240012169
+04/01/2023, 20:13:29: ---------- start evaluation after epoch 5 ----------
+04/01/2023, 20:20:36: validation hit @ 1 is 0.02691826149168306
+04/01/2023, 20:20:36: validation hit @ 5 is 0.0691289572527276
+04/01/2023, 20:20:36: validation hit @ 10 is 0.10033983187265248
+04/01/2023, 20:20:36: validation ncdg @ 5 is 0.04832890333394653
+04/01/2023, 20:20:36: validation ncdg @ 10 is 0.05832092053163506
+04/01/2023, 20:27:43: test hit @ 1 is 0.018869611876229656
+04/01/2023, 20:27:43: test hit @ 5 is 0.05034877481666965
+04/01/2023, 20:27:43: test hit @ 10 is 0.073242711500626
+04/01/2023, 20:27:43: test ncdg @ 5 is 0.035111358771294066
+04/01/2023, 20:27:43: test ncdg @ 10 is 0.04246533175046062
+04/01/2023, 20:27:43: recall increases from 0.09586835986406725 ----> 0.10033983187265248 at epoch 5
+04/01/2023, 20:28:10: validation hit @ 1 is 0.025397961008764087
+04/01/2023, 20:28:10: validation hit @ 5 is 0.0654623502056877
+04/01/2023, 20:28:10: validation hit @ 10 is 0.09524235378286532
+04/01/2023, 20:28:10: validation ncdg @ 5 is 0.04550152851081635
+04/01/2023, 20:28:10: validation ncdg @ 10 is 0.05509339049641726
+04/01/2023, 20:45:41: test hit @ 1 is 0.020032194598461815
+04/01/2023, 20:45:41: test hit @ 5 is 0.05213736362010374
+04/01/2023, 20:45:41: test hit @ 10 is 0.0730638526202826
+04/01/2023, 20:45:41: test ncdg @ 5 is 0.036163625770420496
+04/01/2023, 20:45:41: test ncdg @ 10 is 0.04290399977136103
+04/01/2023, 20:45:41: recall increases from 0.09130745841531032 ----> 0.09524235378286532 at epoch 5
+04/01/2023, 20:45:41: save current best model to best_model/pretrain_t5_small_beauty_CF_10_500_noreplast.pt
+04/01/2023, 20:46:36: ---------- training epoch 6 ----------
+04/01/2023, 20:47:52: total loss for 62000 steps : 891.6747800111771
+04/01/2023, 20:51:11: total loss for 63000 steps : 875.5738218426704
+04/01/2023, 20:54:29: total loss for 64000 steps : 869.8834214806557
+04/01/2023, 20:57:50: total loss for 65000 steps : 855.4049419164658
+04/01/2023, 21:01:06: total loss for 66000 steps : 849.5298921465874
+04/01/2023, 21:04:23: total loss for 67000 steps : 837.1909223794937
+04/01/2023, 21:07:41: total loss for 68000 steps : 823.9118795394897
+04/01/2023, 21:10:56: total loss for 69000 steps : 816.8891777396202
+04/01/2023, 21:14:19: total loss for 70000 steps : 803.6232109069824
+04/01/2023, 21:17:40: total loss for 71000 steps : 792.9653084278107
+04/01/2023, 21:20:34: ---------- start evaluation after epoch 6 ----------
+04/01/2023, 21:27:50: validation hit @ 1 is 0.024682525487390448
+04/01/2023, 21:27:50: validation hit @ 5 is 0.06859238061169737
+04/01/2023, 21:27:50: validation hit @ 10 is 0.09846181362904668
+04/01/2023, 21:27:50: validation ncdg @ 5 is 0.047188570747789586
+04/01/2023, 21:27:50: validation ncdg @ 10 is 0.056829909567861984
+04/01/2023, 21:35:03: test hit @ 1 is 0.01860132355571454
+04/01/2023, 21:35:03: test hit @ 5 is 0.04802360937220533
+04/01/2023, 21:35:03: test hit @ 10 is 0.07190126989805044
+04/01/2023, 21:35:03: test ncdg @ 5 is 0.033725827797562724
+04/01/2023, 21:35:03: test ncdg @ 10 is 0.04138759186000589
