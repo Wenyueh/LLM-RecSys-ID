@@ -1,0 +1,667 @@
+03/06/2023, 13:39:46: Namespace(seed=2022, data_dir='data/', logging_dir='log/pretrain_t5_small_beauty_content_based_new_token.log', model_dir='model/pretrain_t5_small_beauty_content_based_new_token.pt', task='beauty', max_history=20, sequential_num=10, negative_sample=2, yes_no_sample=5, direct_item_proportion=2, train_sequential_item_batch=128, train_sequential_yesno_batch=48, train_direct_yesno_batch=48, train_direct_candidate_batch=12, train_direct_straightforward_batch=48, meta_title_batch=128, meta_description_batch=12, meta_category_batch=128, meta_epochs=10, meta_lr=0.0001, review_user_batch=16, review_item_batch=16, review_epochs=2, review_lr=0.0001, model_type='t5-small', epochs=20, lr=0.001, clip=1.0, logging_step=1000, warmup_prop=0.05, gradient_accumulation_steps=1, weight_decay=0.01, adam_eps=1e-06, dropout=0.1, alpha=2, multiGPU=True, distributed=True, gpu='0,1,4,5', local_rank=0, evaluation_method='sequential_item', evaluation_template_id=0, item_representation='content_based', data_order='random', resolution=2, max_random_number=30000, min_random_number=1000, overlap=0, base=10, random_initialization_embedding=False, no_pretrain=False, use_meta_data=False, use_review_data=False, remove_last_item=False, remove_first_item=False, eval_only=False, check_data=False)
+03/06/2023, 13:39:48: Process Launching at GPU 1
+03/06/2023, 13:39:48: Process Launching at GPU 0
+03/06/2023, 13:39:48: Process Launching at GPU 2
+03/06/2023, 13:39:48: Process Launching at GPU 3
+03/06/2023, 13:39:49: Building train loader at GPU 0
+03/06/2023, 13:39:49: loading data ...
+03/06/2023, 13:39:49: Building train loader at GPU 3
+03/06/2023, 13:39:49: Building train loader at GPU 1
+03/06/2023, 13:39:49: Building train loader at GPU 2
+03/06/2023, 13:39:49: *** use content_based representation, extend vocab ***
+03/06/2023, 13:40:36: finished loading data
+03/06/2023, 13:40:36: length of training data is 2567
+03/06/2023, 13:40:36: loading model ...
+03/06/2023, 13:40:36: using only sequential data, and all possible sequences are here
+03/06/2023, 13:40:36: use pretrained T5
+03/06/2023, 13:40:43: Batch per epoch: 2567
+03/06/2023, 13:40:43: Total steps: 51340
+03/06/2023, 13:40:43: Warmup proportion:
+03/06/2023, 13:40:43: Warm up steps: 2567
+03/06/2023, 13:40:43: model dataparallel set
+03/06/2023, 13:40:43: start training
+03/06/2023, 13:40:43: ---------- training epoch 0 ----------
+03/06/2023, 13:46:49: total loss for 1000 steps : 4782.389007568359
+03/06/2023, 13:52:43: total loss for 2000 steps : 2230.2420115470886
+03/06/2023, 13:56:10: ---------- start evaluation after epoch 0 ----------
+03/06/2023, 13:58:03: validation hit @ 1 is 0.0
+03/06/2023, 13:58:03: validation hit @ 5 is 0.0
+03/06/2023, 13:58:03: validation hit @ 10 is 0.02271507780361295
+03/06/2023, 13:58:04: validation hit @ 1 is 0.0
+03/06/2023, 13:58:04: validation hit @ 5 is 0.0
+03/06/2023, 13:58:04: validation hit @ 10 is 0.017885888034340904
+03/06/2023, 13:58:13: validation hit @ 1 is 0.0
+03/06/2023, 13:58:13: validation hit @ 5 is 0.0
+03/06/2023, 13:58:13: validation hit @ 10 is 0.022893936683956357
+03/06/2023, 13:58:14: validation hit @ 1 is 0.0
+03/06/2023, 13:58:14: validation hit @ 5 is 0.0
+03/06/2023, 13:58:14: validation hit @ 10 is 0.02074763011983545
+03/06/2023, 13:59:58: test hit @ 1 is 0.0
+03/06/2023, 13:59:58: test hit @ 5 is 0.0
+03/06/2023, 13:59:58: test hit @ 10 is 0.01878018243605795
+03/06/2023, 13:59:58: recall increases from 0 ----> 0.02271507780361295 at epoch 0
+03/06/2023, 14:00:08: test hit @ 1 is 0.0
+03/06/2023, 14:00:08: test hit @ 5 is 0.0
+03/06/2023, 14:00:08: test hit @ 10 is 0.014845287068502952
+03/06/2023, 14:00:08: recall increases from 0 ----> 0.017885888034340904 at epoch 0
+03/06/2023, 14:00:13: test hit @ 1 is 0.0
+03/06/2023, 14:00:13: test hit @ 5 is 0.0
+03/06/2023, 14:00:13: test hit @ 10 is 0.01699159363262386
+03/06/2023, 14:00:13: recall increases from 0 ----> 0.022893936683956357 at epoch 0
+03/06/2023, 14:00:21: test hit @ 1 is 0.0
+03/06/2023, 14:00:21: test hit @ 5 is 0.0
+03/06/2023, 14:00:21: test hit @ 10 is 0.012877839384725451
+03/06/2023, 14:00:21: recall increases from 0 ----> 0.02074763011983545 at epoch 0
+03/06/2023, 14:00:21: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 14:00:22: ---------- training epoch 1 ----------
+03/06/2023, 14:03:07: total loss for 3000 steps : 1793.770421385765
+03/06/2023, 14:09:13: total loss for 4000 steps : 1593.9890481233597
+03/06/2023, 14:15:07: total loss for 5000 steps : 1468.9063102006912
+03/06/2023, 14:16:17: ---------- start evaluation after epoch 1 ----------
+03/06/2023, 14:18:09: validation hit @ 1 is 0.0
+03/06/2023, 14:18:09: validation hit @ 5 is 0.0
+03/06/2023, 14:18:09: validation hit @ 10 is 0.02843856197460204
+03/06/2023, 14:18:10: validation hit @ 1 is 0.0
+03/06/2023, 14:18:10: validation hit @ 5 is 0.0
+03/06/2023, 14:18:10: validation hit @ 10 is 0.03130030406009658
+03/06/2023, 14:18:11: validation hit @ 1 is 0.0
+03/06/2023, 14:18:11: validation hit @ 5 is 0.0
+03/06/2023, 14:18:11: validation hit @ 10 is 0.028975138615632265
+03/06/2023, 14:18:15: validation hit @ 1 is 0.0
+03/06/2023, 14:18:15: validation hit @ 5 is 0.0
+03/06/2023, 14:18:15: validation hit @ 10 is 0.027723126453228403
+03/06/2023, 14:20:01: test hit @ 1 is 0.0
+03/06/2023, 14:20:01: test hit @ 5 is 0.0
+03/06/2023, 14:20:01: test hit @ 10 is 0.021284206760865676
+03/06/2023, 14:20:01: recall increases from 0.022893936683956357 ----> 0.02843856197460204 at epoch 1
+03/06/2023, 14:20:04: test hit @ 1 is 0.0
+03/06/2023, 14:20:04: test hit @ 5 is 0.0
+03/06/2023, 14:20:04: test hit @ 10 is 0.02235736004292613
+03/06/2023, 14:20:04: recall increases from 0.02074763011983545 ----> 0.03130030406009658 at epoch 1
+03/06/2023, 14:20:04: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 14:20:05: test hit @ 1 is 0.0
+03/06/2023, 14:20:05: test hit @ 5 is 0.0
+03/06/2023, 14:20:05: test hit @ 10 is 0.020032194598461815
+03/06/2023, 14:20:05: recall increases from 0.02271507780361295 ----> 0.028975138615632265 at epoch 1
+03/06/2023, 14:20:15: test hit @ 1 is 0.0
+03/06/2023, 14:20:15: test hit @ 5 is 0.0
+03/06/2023, 14:20:15: test hit @ 10 is 0.023072795564299767
+03/06/2023, 14:20:15: recall increases from 0.017885888034340904 ----> 0.027723126453228403 at epoch 1
+03/06/2023, 14:20:15: ---------- training epoch 2 ----------
+03/06/2023, 14:26:04: total loss for 6000 steps : 1379.7621847391129
+03/06/2023, 14:32:40: total loss for 7000 steps : 1321.0674049854279
+03/06/2023, 14:37:04: ---------- start evaluation after epoch 2 ----------
+03/06/2023, 14:38:59: validation hit @ 1 is 0.0
+03/06/2023, 14:38:59: validation hit @ 5 is 0.0
+03/06/2023, 14:38:59: validation hit @ 10 is 0.04077982471829726
+03/06/2023, 14:38:59: validation hit @ 1 is 0.0
+03/06/2023, 14:38:59: validation hit @ 5 is 0.0
+03/06/2023, 14:38:59: validation hit @ 10 is 0.03738150599177249
+03/06/2023, 14:38:59: validation hit @ 1 is 0.0
+03/06/2023, 14:38:59: validation hit @ 5 is 0.0
+03/06/2023, 14:38:59: validation hit @ 10 is 0.03738150599177249
+03/06/2023, 14:39:00: validation hit @ 1 is 0.0
+03/06/2023, 14:39:00: validation hit @ 5 is 0.0
+03/06/2023, 14:39:00: validation hit @ 10 is 0.03130030406009658
+03/06/2023, 14:40:52: test hit @ 1 is 0.0
+03/06/2023, 14:40:52: test hit @ 5 is 0.0
+03/06/2023, 14:40:52: test hit @ 10 is 0.02664997317116795
+03/06/2023, 14:40:52: recall increases from 0.03130030406009658 ----> 0.03738150599177249 at epoch 2
+03/06/2023, 14:40:52: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 14:40:52: test hit @ 1 is 0.0
+03/06/2023, 14:40:52: test hit @ 5 is 0.0
+03/06/2023, 14:40:52: test hit @ 10 is 0.02825970309425863
+03/06/2023, 14:40:52: recall increases from 0.02843856197460204 ----> 0.04077982471829726 at epoch 2
+03/06/2023, 14:40:54: test hit @ 1 is 0.0
+03/06/2023, 14:40:54: test hit @ 5 is 0.0
+03/06/2023, 14:40:54: test hit @ 10 is 0.02825970309425863
+03/06/2023, 14:40:54: recall increases from 0.027723126453228403 ----> 0.03130030406009658 at epoch 2
+03/06/2023, 14:40:54: test hit @ 1 is 0.0
+03/06/2023, 14:40:54: test hit @ 5 is 0.0
+03/06/2023, 14:40:54: test hit @ 10 is 0.02879627973528886
+03/06/2023, 14:40:54: recall increases from 0.028975138615632265 ----> 0.03738150599177249 at epoch 2
+03/06/2023, 14:40:54: ---------- training epoch 3 ----------
+03/06/2023, 14:42:45: total loss for 8000 steps : 1273.3708655834198
+03/06/2023, 14:48:56: total loss for 9000 steps : 1236.304725766182
+03/06/2023, 14:55:07: total loss for 10000 steps : 1208.7203756570816
+03/06/2023, 14:56:46: ---------- start evaluation after epoch 3 ----------
+03/06/2023, 14:58:40: validation hit @ 1 is 0.0
+03/06/2023, 14:58:40: validation hit @ 5 is 0.0
+03/06/2023, 14:58:40: validation hit @ 10 is 0.04471472008585226
+03/06/2023, 14:58:40: validation hit @ 1 is 0.0
+03/06/2023, 14:58:40: validation hit @ 5 is 0.0
+03/06/2023, 14:58:40: validation hit @ 10 is 0.051511357538901806
+03/06/2023, 14:58:40: validation hit @ 1 is 0.0
+03/06/2023, 14:58:40: validation hit @ 5 is 0.0
+03/06/2023, 14:58:40: validation hit @ 10 is 0.04703988553031658
+03/06/2023, 14:58:41: validation hit @ 1 is 0.0
+03/06/2023, 14:58:41: validation hit @ 5 is 0.0
+03/06/2023, 14:58:41: validation hit @ 10 is 0.04167411912001431
+03/06/2023, 15:00:33: test hit @ 1 is 0.0
+03/06/2023, 15:00:33: test hit @ 5 is 0.0
+03/06/2023, 15:00:33: test hit @ 10 is 0.031836880701126814
+03/06/2023, 15:00:33: recall increases from 0.03738150599177249 ----> 0.04471472008585226 at epoch 3
+03/06/2023, 15:00:33: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 15:00:34: test hit @ 1 is 0.0
+03/06/2023, 15:00:34: test hit @ 5 is 0.0
+03/06/2023, 15:00:34: test hit @ 10 is 0.03577177606868181
+03/06/2023, 15:00:34: recall increases from 0.03738150599177249 ----> 0.051511357538901806 at epoch 3
+03/06/2023, 15:00:34: test hit @ 1 is 0.0
+03/06/2023, 15:00:34: test hit @ 5 is 0.0
+03/06/2023, 15:00:34: test hit @ 10 is 0.03004829189769272
+03/06/2023, 15:00:34: recall increases from 0.04077982471829726 ----> 0.04703988553031658 at epoch 3
+03/06/2023, 15:00:35: test hit @ 1 is 0.0
+03/06/2023, 15:00:35: test hit @ 5 is 0.0
+03/06/2023, 15:00:35: test hit @ 10 is 0.03273117510284385
+03/06/2023, 15:00:35: recall increases from 0.03130030406009658 ----> 0.04167411912001431 at epoch 3
+03/06/2023, 15:00:35: ---------- training epoch 4 ----------
+03/06/2023, 15:04:57: total loss for 11000 steps : 1187.4915089607239
+03/06/2023, 15:10:55: total loss for 12000 steps : 1170.3717589378357
+03/06/2023, 15:16:12: ---------- start evaluation after epoch 4 ----------
+03/06/2023, 15:18:06: validation hit @ 1 is 0.0
+03/06/2023, 15:18:06: validation hit @ 5 is 0.0
+03/06/2023, 15:18:06: validation hit @ 10 is 0.053657664103022716
+03/06/2023, 15:18:06: validation hit @ 1 is 0.0
+03/06/2023, 15:18:06: validation hit @ 5 is 0.0
+03/06/2023, 15:18:06: validation hit @ 10 is 0.05204793417993203
+03/06/2023, 15:18:07: validation hit @ 1 is 0.0
+03/06/2023, 15:18:07: validation hit @ 5 is 0.0
+03/06/2023, 15:18:07: validation hit @ 10 is 0.05169021641924521
+03/06/2023, 15:18:08: validation hit @ 1 is 0.0
+03/06/2023, 15:18:08: validation hit @ 5 is 0.0
+03/06/2023, 15:18:08: validation hit @ 10 is 0.059202289393668395
+03/06/2023, 15:19:59: test hit @ 1 is 0.0
+03/06/2023, 15:19:59: test hit @ 5 is 0.0
+03/06/2023, 15:19:59: test hit @ 10 is 0.038812377034519764
+03/06/2023, 15:19:59: recall increases from 0.04471472008585226 ----> 0.053657664103022716 at epoch 4
+03/06/2023, 15:19:59: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 15:19:59: test hit @ 1 is 0.0
+03/06/2023, 15:19:59: test hit @ 5 is 0.0
+03/06/2023, 15:19:59: test hit @ 10 is 0.032910033983187266
+03/06/2023, 15:19:59: recall increases from 0.04703988553031658 ----> 0.05204793417993203 at epoch 4
+03/06/2023, 15:20:01: test hit @ 1 is 0.0
+03/06/2023, 15:20:01: test hit @ 5 is 0.0
+03/06/2023, 15:20:01: test hit @ 10 is 0.03934895367554999
+03/06/2023, 15:20:01: recall increases from 0.04167411912001431 ----> 0.05169021641924521 at epoch 4
+03/06/2023, 15:20:02: test hit @ 1 is 0.0
+03/06/2023, 15:20:02: test hit @ 5 is 0.0
+03/06/2023, 15:20:02: test hit @ 10 is 0.04006438919692363
+03/06/2023, 15:20:02: recall increases from 0.051511357538901806 ----> 0.059202289393668395 at epoch 4
+03/06/2023, 15:20:02: ---------- training epoch 5 ----------
+03/06/2023, 15:21:01: total loss for 13000 steps : 1151.9485677480698
+03/06/2023, 15:26:59: total loss for 14000 steps : 1139.6291143894196
+03/06/2023, 15:32:58: total loss for 15000 steps : 1126.3539212942123
+03/06/2023, 15:35:43: ---------- start evaluation after epoch 5 ----------
+03/06/2023, 15:37:48: validation hit @ 1 is 0.0
+03/06/2023, 15:37:48: validation hit @ 5 is 0.0
+03/06/2023, 15:37:48: validation hit @ 10 is 0.0572348417098909
+03/06/2023, 15:37:48: validation hit @ 1 is 0.0
+03/06/2023, 15:37:48: validation hit @ 5 is 0.0
+03/06/2023, 15:37:48: validation hit @ 10 is 0.05687712394920408
+03/06/2023, 15:37:50: validation hit @ 1 is 0.0
+03/06/2023, 15:37:50: validation hit @ 5 is 0.0
+03/06/2023, 15:37:50: validation hit @ 10 is 0.05759255947057772
+03/06/2023, 15:37:51: validation hit @ 1 is 0.0
+03/06/2023, 15:37:51: validation hit @ 5 is 0.0
+03/06/2023, 15:37:51: validation hit @ 10 is 0.06116973707744589
+03/06/2023, 15:39:50: test hit @ 1 is 0.0
+03/06/2023, 15:39:50: test hit @ 5 is 0.0
+03/06/2023, 15:39:50: test hit @ 10 is 0.0395278125558934
+03/06/2023, 15:39:50: recall increases from 0.05204793417993203 ----> 0.0572348417098909 at epoch 5
+03/06/2023, 15:39:52: test hit @ 1 is 0.0
+03/06/2023, 15:39:52: test hit @ 5 is 0.0
+03/06/2023, 15:39:52: test hit @ 10 is 0.04471472008585226
+03/06/2023, 15:39:52: recall increases from 0.053657664103022716 ----> 0.05687712394920408 at epoch 5
+03/06/2023, 15:39:52: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 15:39:55: test hit @ 1 is 0.0
+03/06/2023, 15:39:55: test hit @ 5 is 0.0
+03/06/2023, 15:39:55: test hit @ 10 is 0.04596673224825613
+03/06/2023, 15:39:55: recall increases from 0.059202289393668395 ----> 0.06116973707744589 at epoch 5
+03/06/2023, 15:39:55: test hit @ 1 is 0.0
+03/06/2023, 15:39:55: test hit @ 5 is 0.0
+03/06/2023, 15:39:55: test hit @ 10 is 0.04292613128241817
+03/06/2023, 15:39:55: recall increases from 0.05169021641924521 ----> 0.05759255947057772 at epoch 5
+03/06/2023, 15:39:55: ---------- training epoch 6 ----------
+03/06/2023, 15:43:55: total loss for 16000 steps : 1116.4864865541458
+03/06/2023, 15:49:58: total loss for 17000 steps : 1106.2109642028809
+03/06/2023, 15:55:50: ---------- start evaluation after epoch 6 ----------
+03/06/2023, 15:57:44: validation hit @ 1 is 0.0
+03/06/2023, 15:57:44: validation hit @ 5 is 0.0
+03/06/2023, 15:57:44: validation hit @ 10 is 0.0672509390091218
+03/06/2023, 15:57:44: validation hit @ 1 is 0.0
+03/06/2023, 15:57:44: validation hit @ 5 is 0.0
+03/06/2023, 15:57:44: validation hit @ 10 is 0.06671436236809157
+03/06/2023, 15:57:45: validation hit @ 1 is 0.0
+03/06/2023, 15:57:45: validation hit @ 5 is 0.0
+03/06/2023, 15:57:45: validation hit @ 10 is 0.06832409229118226
+03/06/2023, 15:57:46: validation hit @ 1 is 0.0
+03/06/2023, 15:57:46: validation hit @ 5 is 0.0
+03/06/2023, 15:57:46: validation hit @ 10 is 0.06796637453049544
+03/06/2023, 15:59:39: test hit @ 1 is 0.0
+03/06/2023, 15:59:39: test hit @ 5 is 0.0
+03/06/2023, 15:59:39: test hit @ 10 is 0.048291897692720444
+03/06/2023, 15:59:39: recall increases from 0.0572348417098909 ----> 0.0672509390091218 at epoch 6
+03/06/2023, 15:59:40: test hit @ 1 is 0.0
+03/06/2023, 15:59:40: test hit @ 5 is 0.0
+03/06/2023, 15:59:40: test hit @ 10 is 0.04847075657306385
+03/06/2023, 15:59:40: recall increases from 0.05759255947057772 ----> 0.06671436236809157 at epoch 6
+03/06/2023, 15:59:41: test hit @ 1 is 0.0
+03/06/2023, 15:59:41: test hit @ 5 is 0.0
+03/06/2023, 15:59:41: test hit @ 10 is 0.05383652298336612
+03/06/2023, 15:59:41: recall increases from 0.05687712394920408 ----> 0.06796637453049544 at epoch 6
+03/06/2023, 15:59:41: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 15:59:41: test hit @ 1 is 0.0
+03/06/2023, 15:59:41: test hit @ 5 is 0.0
+03/06/2023, 15:59:41: test hit @ 10 is 0.05025934537649794
+03/06/2023, 15:59:41: recall increases from 0.06116973707744589 ----> 0.06832409229118226 at epoch 6
+03/06/2023, 15:59:42: ---------- training epoch 7 ----------
+03/06/2023, 15:59:54: total loss for 18000 steps : 1095.966997563839
+03/06/2023, 16:06:12: total loss for 19000 steps : 1085.2135424613953
+03/06/2023, 16:12:26: total loss for 20000 steps : 1076.332875430584
+03/06/2023, 16:15:41: ---------- start evaluation after epoch 7 ----------
+03/06/2023, 16:17:30: validation hit @ 1 is 0.0
+03/06/2023, 16:17:30: validation hit @ 5 is 0.0
+03/06/2023, 16:17:30: validation hit @ 10 is 0.07386871758182793
+03/06/2023, 16:17:31: validation hit @ 1 is 0.0
+03/06/2023, 16:17:31: validation hit @ 5 is 0.0
+03/06/2023, 16:17:31: validation hit @ 10 is 0.0711858343766768
+03/06/2023, 16:17:31: validation hit @ 1 is 0.0
+03/06/2023, 16:17:31: validation hit @ 5 is 0.0
+03/06/2023, 16:17:31: validation hit @ 1 is 0.0
+03/06/2023, 16:17:31: validation hit @ 10 is 0.07368985870148453
+03/06/2023, 16:17:31: validation hit @ 5 is 0.0
+03/06/2023, 16:17:31: validation hit @ 10 is 0.0751207297442318
+03/06/2023, 16:19:19: test hit @ 1 is 0.0
+03/06/2023, 16:19:19: test hit @ 5 is 0.0
+03/06/2023, 16:19:19: test hit @ 10 is 0.05294222858164908
+03/06/2023, 16:19:19: recall increases from 0.0672509390091218 ----> 0.07386871758182793 at epoch 7
+03/06/2023, 16:19:21: test hit @ 1 is 0.0
+03/06/2023, 16:19:21: test hit @ 5 is 0.0
+03/06/2023, 16:19:21: test hit @ 10 is 0.05437309962439635
+03/06/2023, 16:19:21: recall increases from 0.06796637453049544 ----> 0.07368985870148453 at epoch 7
+03/06/2023, 16:19:21: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 16:19:21: test hit @ 1 is 0.0
+03/06/2023, 16:19:21: test hit @ 5 is 0.0
+03/06/2023, 16:19:21: test hit @ 10 is 0.05258451082096226
+03/06/2023, 16:19:21: recall increases from 0.06671436236809157 ----> 0.0711858343766768 at epoch 7
+03/06/2023, 16:19:22: test hit @ 1 is 0.0
+03/06/2023, 16:19:22: test hit @ 5 is 0.0
+03/06/2023, 16:19:22: test hit @ 10 is 0.05759255947057772
+03/06/2023, 16:19:22: recall increases from 0.06832409229118226 ----> 0.0751207297442318 at epoch 7
+03/06/2023, 16:19:22: ---------- training epoch 8 ----------
+03/06/2023, 16:22:07: total loss for 21000 steps : 1064.8569802641869
+03/06/2023, 16:28:08: total loss for 22000 steps : 1056.5828332304955
+03/06/2023, 16:34:37: total loss for 23000 steps : 1046.533097088337
+03/06/2023, 16:35:26: ---------- start evaluation after epoch 8 ----------
+03/06/2023, 16:37:30: validation hit @ 1 is 0.0
+03/06/2023, 16:37:30: validation hit @ 5 is 0.0
+03/06/2023, 16:37:30: validation hit @ 10 is 0.07816133071006975
+03/06/2023, 16:37:31: validation hit @ 1 is 0.0
+03/06/2023, 16:37:31: validation hit @ 5 is 0.0
+03/06/2023, 16:37:31: validation hit @ 10 is 0.0751207297442318
+03/06/2023, 16:37:31: validation hit @ 1 is 0.0
+03/06/2023, 16:37:31: validation hit @ 5 is 0.0
+03/06/2023, 16:37:31: validation hit @ 10 is 0.08388481488105884
+03/06/2023, 16:37:33: validation hit @ 1 is 0.0
+03/06/2023, 16:37:33: validation hit @ 5 is 0.0
+03/06/2023, 16:37:33: validation hit @ 10 is 0.07547844750491862
+03/06/2023, 16:39:32: test hit @ 1 is 0.0
+03/06/2023, 16:39:32: test hit @ 5 is 0.0
+03/06/2023, 16:39:32: test hit @ 10 is 0.05258451082096226
+03/06/2023, 16:39:32: recall increases from 0.07386871758182793 ----> 0.07816133071006975 at epoch 8
+03/06/2023, 16:39:36: test hit @ 1 is 0.0
+03/06/2023, 16:39:36: test hit @ 5 is 0.0
+03/06/2023, 16:39:36: test hit @ 10 is 0.061706313718476125
+03/06/2023, 16:39:36: recall increases from 0.07368985870148453 ----> 0.0751207297442318 at epoch 8
+03/06/2023, 16:39:36: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 16:39:36: test hit @ 1 is 0.0
+03/06/2023, 16:39:36: test hit @ 5 is 0.0
+03/06/2023, 16:39:36: test hit @ 10 is 0.05902343051332499
+03/06/2023, 16:39:36: recall increases from 0.0751207297442318 ----> 0.08388481488105884 at epoch 8
+03/06/2023, 16:39:38: test hit @ 1 is 0.0
+03/06/2023, 16:39:38: test hit @ 5 is 0.0
+03/06/2023, 16:39:38: test hit @ 10 is 0.05759255947057772
+03/06/2023, 16:39:38: recall increases from 0.0711858343766768 ----> 0.07547844750491862 at epoch 8
+03/06/2023, 16:39:38: ---------- training epoch 9 ----------
+03/06/2023, 16:45:16: total loss for 24000 steps : 1036.260447204113
+03/06/2023, 16:51:29: total loss for 25000 steps : 1027.190031528473
+03/06/2023, 16:55:45: ---------- start evaluation after epoch 9 ----------
+03/06/2023, 16:57:41: validation hit @ 1 is 0.0
+03/06/2023, 16:57:41: validation hit @ 5 is 0.0
+03/06/2023, 16:57:41: validation hit @ 10 is 0.08406367376140225
+03/06/2023, 16:57:42: validation hit @ 1 is 0.0
+03/06/2023, 16:57:42: validation hit @ 5 is 0.0
+03/06/2023, 16:57:42: validation hit @ 10 is 0.08334823824002861
+03/06/2023, 16:57:43: validation hit @ 1 is 0.0
+03/06/2023, 16:57:43: validation hit @ 5 is 0.0
+03/06/2023, 16:57:43: validation hit @ 10 is 0.08209622607762475
+03/06/2023, 16:57:43: validation hit @ 1 is 0.0
+03/06/2023, 16:57:43: validation hit @ 5 is 0.0
+03/06/2023, 16:57:43: validation hit @ 10 is 0.08012877839384726
+03/06/2023, 16:59:36: test hit @ 1 is 0.0
+03/06/2023, 16:59:36: test hit @ 5 is 0.0
+03/06/2023, 16:59:36: test hit @ 10 is 0.059917724915042034
+03/06/2023, 16:59:36: recall increases from 0.07816133071006975 ----> 0.08406367376140225 at epoch 9
+03/06/2023, 16:59:37: test hit @ 1 is 0.0
+03/06/2023, 16:59:37: test hit @ 5 is 0.0
+03/06/2023, 16:59:37: test hit @ 10 is 0.06689322124843498
+03/06/2023, 16:59:37: recall increases from 0.0751207297442318 ----> 0.08334823824002861 at epoch 9
+03/06/2023, 16:59:37: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 16:59:40: test hit @ 1 is 0.0
+03/06/2023, 16:59:40: test hit @ 5 is 0.0
+03/06/2023, 16:59:40: test hit @ 10 is 0.060633160436415666
+03/06/2023, 16:59:40: recall increases from 0.07547844750491862 ----> 0.08012877839384726 at epoch 9
+03/06/2023, 16:59:40: test hit @ 1 is 0.0
+03/06/2023, 16:59:40: test hit @ 5 is 0.0
+03/06/2023, 16:59:40: test hit @ 10 is 0.06474691468431408
+03/06/2023, 16:59:40: ---------- training epoch 10 ----------
+03/06/2023, 17:01:43: total loss for 26000 steps : 1018.5645670294762
+03/06/2023, 17:07:51: total loss for 27000 steps : 1008.8825879693031
+03/06/2023, 17:13:51: total loss for 28000 steps : 999.6479998826981
+03/06/2023, 17:15:22: ---------- start evaluation after epoch 10 ----------
+03/06/2023, 17:17:12: validation hit @ 1 is 0.0
+03/06/2023, 17:17:12: validation hit @ 5 is 0.0
+03/06/2023, 17:17:12: validation hit @ 10 is 0.08603112144517976
+03/06/2023, 17:17:13: validation hit @ 1 is 0.0
+03/06/2023, 17:17:13: validation hit @ 5 is 0.0
+03/06/2023, 17:17:13: validation hit @ 10 is 0.0829905204793418
+03/06/2023, 17:17:13: validation hit @ 1 is 0.0
+03/06/2023, 17:17:13: validation hit @ 5 is 0.0
+03/06/2023, 17:17:13: validation hit @ 10 is 0.08155964943659452
+03/06/2023, 17:17:13: validation hit @ 1 is 0.0
+03/06/2023, 17:17:13: validation hit @ 5 is 0.0
+03/06/2023, 17:17:13: validation hit @ 10 is 0.08799856912895725
+03/06/2023, 17:19:01: test hit @ 1 is 0.0
+03/06/2023, 17:19:01: test hit @ 5 is 0.0
+03/06/2023, 17:19:01: test hit @ 10 is 0.05848685387229476
+03/06/2023, 17:19:01: recall increases from 0.08406367376140225 ----> 0.08603112144517976 at epoch 10
+03/06/2023, 17:19:02: test hit @ 1 is 0.0
+03/06/2023, 17:19:02: test hit @ 5 is 0.0
+03/06/2023, 17:19:02: test hit @ 10 is 0.06957610445358613
+03/06/2023, 17:19:03: test hit @ 1 is 0.0
+03/06/2023, 17:19:03: test hit @ 5 is 0.0
+03/06/2023, 17:19:03: test hit @ 10 is 0.06116973707744589
+03/06/2023, 17:19:03: recall increases from 0.08012877839384726 ----> 0.08155964943659452 at epoch 10
+03/06/2023, 17:19:03: test hit @ 1 is 0.0
+03/06/2023, 17:19:03: test hit @ 5 is 0.0
+03/06/2023, 17:19:03: test hit @ 10 is 0.06760865676980862
+03/06/2023, 17:19:03: recall increases from 0.08388481488105884 ----> 0.08799856912895725 at epoch 10
+03/06/2023, 17:19:03: ---------- training epoch 11 ----------
+03/06/2023, 17:24:03: total loss for 29000 steps : 989.9638293385506
+03/06/2023, 17:30:30: total loss for 30000 steps : 980.6053535342216
+03/06/2023, 17:35:31: ---------- start evaluation after epoch 11 ----------
+03/06/2023, 17:37:27: validation hit @ 1 is 0.0
+03/06/2023, 17:37:27: validation hit @ 5 is 0.0
+03/06/2023, 17:37:27: validation hit @ 10 is 0.08835628688964407
+03/06/2023, 17:37:27: validation hit @ 1 is 0.0
+03/06/2023, 17:37:27: validation hit @ 5 is 0.0
+03/06/2023, 17:37:27: validation hit @ 10 is 0.0869254158468968
+03/06/2023, 17:37:28: validation hit @ 1 is 0.0
+03/06/2023, 17:37:28: validation hit @ 5 is 0.0
+03/06/2023, 17:37:28: validation hit @ 10 is 0.08728313360758362
+03/06/2023, 17:37:28: validation hit @ 1 is 0.0
+03/06/2023, 17:37:28: validation hit @ 5 is 0.0
+03/06/2023, 17:37:28: validation hit @ 10 is 0.0869254158468968
+03/06/2023, 17:39:23: test hit @ 1 is 0.0
+03/06/2023, 17:39:23: test hit @ 5 is 0.0
+03/06/2023, 17:39:23: test hit @ 10 is 0.06224289035950635
+03/06/2023, 17:39:23: recall increases from 0.08603112144517976 ----> 0.08835628688964407 at epoch 11
+03/06/2023, 17:39:25: test hit @ 1 is 0.0
+03/06/2023, 17:39:25: test hit @ 5 is 0.0
+03/06/2023, 17:39:25: test hit @ 10 is 0.06975496333392953
+03/06/2023, 17:39:25: recall increases from 0.08334823824002861 ----> 0.0869254158468968 at epoch 11
+03/06/2023, 17:39:25: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 17:39:26: test hit @ 1 is 0.0
+03/06/2023, 17:39:26: test hit @ 5 is 0.0
+03/06/2023, 17:39:26: test hit @ 1 is 0.0
+03/06/2023, 17:39:26: test hit @ 10 is 0.06152745483813271
+03/06/2023, 17:39:26: test hit @ 5 is 0.0
+03/06/2023, 17:39:26: recall increases from 0.08155964943659452 ----> 0.08728313360758362 at epoch 11
+03/06/2023, 17:39:26: test hit @ 10 is 0.0692183866928993
+03/06/2023, 17:39:26: ---------- training epoch 12 ----------
+03/06/2023, 17:40:40: total loss for 31000 steps : 971.2441256046295
+03/06/2023, 17:46:55: total loss for 32000 steps : 962.0442744493484
+03/06/2023, 17:53:07: total loss for 33000 steps : 954.1470019817352
+03/06/2023, 17:55:26: ---------- start evaluation after epoch 12 ----------
+03/06/2023, 17:57:19: validation hit @ 1 is 0.0
+03/06/2023, 17:57:19: validation hit @ 5 is 0.0
+03/06/2023, 17:57:19: validation hit @ 10 is 0.0926489000178859
+03/06/2023, 17:57:19: validation hit @ 1 is 0.0
+03/06/2023, 17:57:19: validation hit @ 5 is 0.0
+03/06/2023, 17:57:19: validation hit @ 10 is 0.09247004113754248
+03/06/2023, 17:57:20: validation hit @ 1 is 0.0
+03/06/2023, 17:57:20: validation hit @ 5 is 0.0
+03/06/2023, 17:57:20: validation hit @ 10 is 0.0908603112144518
+03/06/2023, 17:57:21: validation hit @ 1 is 0.0
+03/06/2023, 17:57:21: validation hit @ 5 is 0.0
+03/06/2023, 17:57:21: validation hit @ 10 is 0.09372205329994635
+03/06/2023, 17:59:08: test hit @ 1 is 0.0
+03/06/2023, 17:59:08: test hit @ 5 is 0.0
+03/06/2023, 17:59:08: test hit @ 10 is 0.061348595957789305
+03/06/2023, 17:59:08: recall increases from 0.08835628688964407 ----> 0.09247004113754248 at epoch 12
+03/06/2023, 17:59:10: test hit @ 1 is 0.0
+03/06/2023, 17:59:10: test hit @ 5 is 0.0
+03/06/2023, 17:59:10: test hit @ 10 is 0.0670720801287784
+03/06/2023, 17:59:10: recall increases from 0.08728313360758362 ----> 0.0926489000178859 at epoch 12
+03/06/2023, 17:59:10: test hit @ 1 is 0.0
+03/06/2023, 17:59:10: test hit @ 5 is 0.0
+03/06/2023, 17:59:10: test hit @ 10 is 0.07082811661598998
+03/06/2023, 17:59:10: recall increases from 0.0869254158468968 ----> 0.0908603112144518 at epoch 12
+03/06/2023, 17:59:10: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 17:59:10: test hit @ 1 is 0.0
+03/06/2023, 17:59:10: test hit @ 5 is 0.0
+03/06/2023, 17:59:10: test hit @ 10 is 0.0711858343766768
+03/06/2023, 17:59:10: recall increases from 0.08799856912895725 ----> 0.09372205329994635 at epoch 12
+03/06/2023, 17:59:11: ---------- training epoch 13 ----------
+03/06/2023, 18:02:49: total loss for 34000 steps : 944.015674829483
+03/06/2023, 18:08:50: total loss for 35000 steps : 935.9537872672081
+03/06/2023, 18:14:43: ---------- start evaluation after epoch 13 ----------
+03/06/2023, 18:16:39: validation hit @ 1 is 0.0
+03/06/2023, 18:16:39: validation hit @ 5 is 0.0
+03/06/2023, 18:16:39: validation hit @ 10 is 0.09050259345376498
+03/06/2023, 18:16:40: validation hit @ 1 is 0.0
+03/06/2023, 18:16:40: validation hit @ 5 is 0.0
+03/06/2023, 18:16:40: validation hit @ 10 is 0.09461634770166338
+03/06/2023, 18:16:41: validation hit @ 1 is 0.0
+03/06/2023, 18:16:41: validation hit @ 5 is 0.0
+03/06/2023, 18:16:41: validation hit @ 10 is 0.09211232337685567
+03/06/2023, 18:16:41: validation hit @ 1 is 0.0
+03/06/2023, 18:16:41: validation hit @ 5 is 0.0
+03/06/2023, 18:16:41: validation hit @ 10 is 0.09175460561616884
+03/06/2023, 18:18:44: test hit @ 1 is 0.0
+03/06/2023, 18:18:44: test hit @ 5 is 0.0
+03/06/2023, 18:18:44: test hit @ 10 is 0.06635664460740476
+03/06/2023, 18:18:44: recall increases from 0.09247004113754248 ----> 0.09461634770166338 at epoch 13
+03/06/2023, 18:18:45: test hit @ 1 is 0.0
+03/06/2023, 18:18:45: test hit @ 5 is 0.0
+03/06/2023, 18:18:45: test hit @ 10 is 0.07082811661598998
+03/06/2023, 18:18:48: test hit @ 1 is 0.0
+03/06/2023, 18:18:48: test hit @ 5 is 0.0
+03/06/2023, 18:18:48: test hit @ 10 is 0.06993382221427294
+03/06/2023, 18:18:48: test hit @ 1 is 0.0
+03/06/2023, 18:18:48: test hit @ 5 is 0.0
+03/06/2023, 18:18:48: test hit @ 10 is 0.07315328206045431
+03/06/2023, 18:18:48: ---------- training epoch 14 ----------
+03/06/2023, 18:19:14: total loss for 36000 steps : 928.9534439444542
+03/06/2023, 18:25:59: total loss for 37000 steps : 919.3122217655182
+03/06/2023, 18:32:13: total loss for 38000 steps : 910.0855157971382
+03/06/2023, 18:35:27: ---------- start evaluation after epoch 14 ----------
+03/06/2023, 18:37:23: validation hit @ 1 is 0.0
+03/06/2023, 18:37:23: validation hit @ 5 is 0.0
+03/06/2023, 18:37:23: validation hit @ 10 is 0.09568950098372384
+03/06/2023, 18:37:23: validation hit @ 1 is 0.0
+03/06/2023, 18:37:23: validation hit @ 5 is 0.0
+03/06/2023, 18:37:23: validation hit @ 10 is 0.09068145233410839
+03/06/2023, 18:37:24: validation hit @ 1 is 0.0
+03/06/2023, 18:37:24: validation hit @ 5 is 0.0
+03/06/2023, 18:37:24: validation hit @ 10 is 0.09407977106063316
+03/06/2023, 18:37:24: validation hit @ 1 is 0.0
+03/06/2023, 18:37:24: validation hit @ 5 is 0.0
+03/06/2023, 18:37:24: validation hit @ 10 is 0.09622607762475408
+03/06/2023, 18:39:19: test hit @ 1 is 0.0
+03/06/2023, 18:39:19: test hit @ 5 is 0.0
+03/06/2023, 18:39:19: test hit @ 10 is 0.07243784653908067
+03/06/2023, 18:39:19: recall increases from 0.09372205329994635 ----> 0.09568950098372384 at epoch 14
+03/06/2023, 18:39:19: test hit @ 1 is 0.0
+03/06/2023, 18:39:19: test hit @ 5 is 0.0
+03/06/2023, 18:39:19: test hit @ 10 is 0.06403147916294044
+03/06/2023, 18:39:19: test hit @ 1 is 0.0
+03/06/2023, 18:39:19: test hit @ 5 is 0.0
+03/06/2023, 18:39:19: test hit @ 10 is 0.07386871758182793
+03/06/2023, 18:39:19: recall increases from 0.0908603112144518 ----> 0.09407977106063316 at epoch 14
+03/06/2023, 18:39:19: save current best model to best_model/pretrain_t5_small_beauty_content_based_new_token.pt
+03/06/2023, 18:39:21: test hit @ 1 is 0.0
+03/06/2023, 18:39:21: test hit @ 5 is 0.0
+03/06/2023, 18:39:21: test hit @ 10 is 0.06796637453049544
+03/06/2023, 18:39:21: recall increases from 0.0926489000178859 ----> 0.09622607762475408 at epoch 14
+03/06/2023, 18:39:21: ---------- training epoch 15 ----------
+03/06/2023, 18:42:19: total loss for 39000 steps : 904.4534665942192
+03/06/2023, 18:48:19: total loss for 40000 steps : 893.2773515582085
+03/06/2023, 18:54:24: total loss for 41000 steps : 888.3407614827156
+03/06/2023, 18:55:04: ---------- start evaluation after epoch 15 ----------
+03/06/2023, 18:57:00: validation hit @ 1 is 0.0
+03/06/2023, 18:57:00: validation hit @ 5 is 0.0
+03/06/2023, 18:57:00: validation hit @ 10 is 0.09139688785548203
+03/06/2023, 18:57:00: validation hit @ 1 is 0.0
+03/06/2023, 18:57:00: validation hit @ 5 is 0.0
+03/06/2023, 18:57:00: validation hit @ 10 is 0.09497406546235021
+03/06/2023, 18:57:02: validation hit @ 1 is 0.0
+03/06/2023, 18:57:02: validation hit @ 5 is 0.0
+03/06/2023, 18:57:02: validation hit @ 10 is 0.09551064210338044
+03/06/2023, 18:57:02: validation hit @ 1 is 0.0
+03/06/2023, 18:57:02: validation hit @ 5 is 0.0
+03/06/2023, 18:57:02: validation hit @ 10 is 0.0969415131461277
+03/06/2023, 18:58:56: test hit @ 1 is 0.0
+03/06/2023, 18:58:56: test hit @ 5 is 0.0
+03/06/2023, 18:58:56: test hit @ 10 is 0.06510463244500089
+03/06/2023, 18:58:56: recall increases from 0.09461634770166338 ----> 0.09497406546235021 at epoch 15
+03/06/2023, 18:58:56: test hit @ 1 is 0.0
+03/06/2023, 18:58:56: test hit @ 5 is 0.0
+03/06/2023, 18:58:56: test hit @ 10 is 0.0711858343766768
+03/06/2023, 18:58:59: test hit @ 1 is 0.0
+03/06/2023, 18:58:59: test hit @ 5 is 0.0
+03/06/2023, 18:58:59: test hit @ 10 is 0.07190126989805044
+03/06/2023, 18:58:59: recall increases from 0.09622607762475408 ----> 0.0969415131461277 at epoch 15
+03/06/2023, 18:58:59: test hit @ 1 is 0.0
+03/06/2023, 18:58:59: test hit @ 5 is 0.0
+03/06/2023, 18:58:59: test hit @ 10 is 0.07261670541942407
+03/06/2023, 18:58:59: ---------- training epoch 16 ----------
+03/06/2023, 19:05:02: total loss for 42000 steps : 881.0486136078835
+03/06/2023, 19:11:19: total loss for 43000 steps : 873.8063859343529
+03/06/2023, 19:15:20: ---------- start evaluation after epoch 16 ----------
+03/06/2023, 19:17:17: validation hit @ 1 is 0.0
+03/06/2023, 19:17:17: validation hit @ 5 is 0.0
+03/06/2023, 19:17:17: validation hit @ 10 is 0.09747808978715793
+03/06/2023, 19:17:17: validation hit @ 1 is 0.0
+03/06/2023, 19:17:17: validation hit @ 5 is 0.0
+03/06/2023, 19:17:17: validation hit @ 10 is 0.09211232337685567
+03/06/2023, 19:17:19: validation hit @ 1 is 0.0
+03/06/2023, 19:17:19: validation hit @ 5 is 0.0
+03/06/2023, 19:17:19: validation hit @ 10 is 0.09944553747093543
+03/06/2023, 19:17:19: validation hit @ 1 is 0.0
+03/06/2023, 19:17:19: validation hit @ 5 is 0.0
+03/06/2023, 19:17:19: validation hit @ 10 is 0.09604721874441066
+03/06/2023, 19:19:12: test hit @ 1 is 0.0
+03/06/2023, 19:19:12: test hit @ 5 is 0.0
+03/06/2023, 19:19:12: test hit @ 10 is 0.06260060812019316
+03/06/2023, 19:19:12: recall increases from 0.09497406546235021 ----> 0.09747808978715793 at epoch 16
+03/06/2023, 19:19:13: test hit @ 1 is 0.0
+03/06/2023, 19:19:13: test hit @ 5 is 0.0
+03/06/2023, 19:19:13: test hit @ 10 is 0.07351099982114112
+03/06/2023, 19:19:15: test hit @ 1 is 0.0
+03/06/2023, 19:19:15: test hit @ 5 is 0.0
+03/06/2023, 19:19:15: test hit @ 10 is 0.07243784653908067
+03/06/2023, 19:19:15: recall increases from 0.0969415131461277 ----> 0.09944553747093543 at epoch 16
+03/06/2023, 19:19:16: test hit @ 1 is 0.0
+03/06/2023, 19:19:16: test hit @ 5 is 0.0
+03/06/2023, 19:19:16: test hit @ 10 is 0.07404757646217135
+03/06/2023, 19:19:16: recall increases from 0.09568950098372384 ----> 0.09604721874441066 at epoch 16
+03/06/2023, 19:19:16: ---------- training epoch 17 ----------
+03/06/2023, 19:21:52: total loss for 44000 steps : 868.2354946136475
+03/06/2023, 19:29:47: total loss for 45000 steps : 860.4154390096664
+03/06/2023, 19:37:46: total loss for 46000 steps : 855.9081087112427
+03/06/2023, 19:39:34: ---------- start evaluation after epoch 17 ----------
+03/06/2023, 19:42:06: validation hit @ 1 is 0.0
+03/06/2023, 19:42:06: validation hit @ 5 is 0.0
+03/06/2023, 19:42:06: validation hit @ 10 is 0.09729923090681453
+03/06/2023, 19:42:07: validation hit @ 1 is 0.0
+03/06/2023, 19:42:07: validation hit @ 5 is 0.0
+03/06/2023, 19:42:07: validation hit @ 10 is 0.09712037202647111
+03/06/2023, 19:42:10: validation hit @ 1 is 0.0
+03/06/2023, 19:42:10: validation hit @ 5 is 0.0
+03/06/2023, 19:42:10: validation hit @ 10 is 0.09783580754784475
+03/06/2023, 19:42:11: validation hit @ 1 is 0.0
+03/06/2023, 19:42:11: validation hit @ 5 is 0.0
+03/06/2023, 19:42:11: validation hit @ 10 is 0.09390091218028974
+03/06/2023, 19:44:20: test hit @ 1 is 0.0
+03/06/2023, 19:44:20: test hit @ 5 is 0.0
+03/06/2023, 19:44:20: test hit @ 10 is 0.07243784653908067
+03/06/2023, 19:44:20: recall increases from 0.09604721874441066 ----> 0.09729923090681453 at epoch 17
+03/06/2023, 19:44:29: test hit @ 1 is 0.0
+03/06/2023, 19:44:29: test hit @ 5 is 0.0
+03/06/2023, 19:44:29: test hit @ 10 is 0.06367376140225363
+03/06/2023, 19:44:39: test hit @ 1 is 0.0
+03/06/2023, 19:44:39: test hit @ 5 is 0.0
+03/06/2023, 19:44:39: test hit @ 10 is 0.07404757646217135
+03/06/2023, 19:44:43: test hit @ 1 is 0.0
+03/06/2023, 19:44:43: test hit @ 5 is 0.0
+03/06/2023, 19:44:43: test hit @ 10 is 0.07422643534251476
+03/06/2023, 19:44:43: ---------- training epoch 18 ----------
+03/06/2023, 19:51:03: total loss for 47000 steps : 853.0101329088211
+03/06/2023, 19:57:38: total loss for 48000 steps : 849.2123747467995
+03/06/2023, 20:02:29: ---------- start evaluation after epoch 18 ----------
+03/06/2023, 20:04:26: validation hit @ 1 is 0.0
+03/06/2023, 20:04:26: validation hit @ 5 is 0.0
+03/06/2023, 20:04:26: validation hit @ 10 is 0.09712037202647111
+03/06/2023, 20:04:26: validation hit @ 1 is 0.0
+03/06/2023, 20:04:26: validation hit @ 5 is 0.0
+03/06/2023, 20:04:26: validation hit @ 10 is 0.09407977106063316
+03/06/2023, 20:04:28: validation hit @ 1 is 0.0
+03/06/2023, 20:04:28: validation hit @ 5 is 0.0
+03/06/2023, 20:04:28: validation hit @ 10 is 0.10087640851368271
+03/06/2023, 20:04:28: validation hit @ 1 is 0.0
+03/06/2023, 20:04:28: validation hit @ 5 is 0.0
+03/06/2023, 20:04:28: validation hit @ 10 is 0.09622607762475408
+03/06/2023, 20:06:23: test hit @ 1 is 0.0
+03/06/2023, 20:06:23: test hit @ 5 is 0.0
+03/06/2023, 20:06:23: test hit @ 10 is 0.06349490252191022
+03/06/2023, 20:06:24: test hit @ 1 is 0.0
+03/06/2023, 20:06:24: test hit @ 5 is 0.0
+03/06/2023, 20:06:24: test hit @ 10 is 0.07476301198354499
+03/06/2023, 20:06:25: test hit @ 1 is 0.0
+03/06/2023, 20:06:25: test hit @ 5 is 0.0
+03/06/2023, 20:06:25: test hit @ 10 is 0.07565730638526202
+03/06/2023, 20:06:25: test hit @ 1 is 0.0
+03/06/2023, 20:06:25: test hit @ 5 is 0.0
+03/06/2023, 20:06:25: test hit @ 10 is 0.07279556429976748
+03/06/2023, 20:06:25: recall increases from 0.09944553747093543 ----> 0.10087640851368271 at epoch 18
+03/06/2023, 20:06:25: ---------- training epoch 19 ----------
+03/06/2023, 20:07:51: total loss for 49000 steps : 845.7598028182983
+03/06/2023, 20:14:06: total loss for 50000 steps : 840.3108763694763
+03/06/2023, 20:20:22: total loss for 51000 steps : 838.9408119916916
+03/06/2023, 20:22:30: ---------- start evaluation after epoch 19 ----------
+03/06/2023, 20:24:27: validation hit @ 1 is 0.0
+03/06/2023, 20:24:27: validation hit @ 5 is 0.0
+03/06/2023, 20:24:27: validation hit @ 10 is 0.09443748882131998
+03/06/2023, 20:24:28: validation hit @ 1 is 0.0
+03/06/2023, 20:24:28: validation hit @ 5 is 0.0
+03/06/2023, 20:24:28: validation hit @ 10 is 0.09372205329994635
+03/06/2023, 20:24:28: validation hit @ 1 is 0.0
+03/06/2023, 20:24:28: validation hit @ 5 is 0.0
+03/06/2023, 20:24:28: validation hit @ 10 is 0.09837238418887498
+03/06/2023, 20:24:29: validation hit @ 1 is 0.0
+03/06/2023, 20:24:29: validation hit @ 5 is 0.0
+03/06/2023, 20:24:29: validation hit @ 10 is 0.10033983187265248
+03/06/2023, 20:26:24: test hit @ 1 is 0.0
+03/06/2023, 20:26:24: test hit @ 5 is 0.0
+03/06/2023, 20:26:24: test hit @ 10 is 0.06456805580397067
+03/06/2023, 20:26:25: test hit @ 1 is 0.0
+03/06/2023, 20:26:25: test hit @ 5 is 0.0
+03/06/2023, 20:26:25: test hit @ 10 is 0.07565730638526202
+03/06/2023, 20:26:25: test hit @ 1 is 0.0
+03/06/2023, 20:26:25: test hit @ 5 is 0.0
+03/06/2023, 20:26:25: test hit @ 10 is 0.0751207297442318
+03/06/2023, 20:26:25: recall increases from 0.09729923090681453 ----> 0.09837238418887498 at epoch 19
+03/06/2023, 20:26:26: test hit @ 1 is 0.0
+03/06/2023, 20:26:26: test hit @ 5 is 0.0
+03/06/2023, 20:26:26: test hit @ 10 is 0.07404757646217135

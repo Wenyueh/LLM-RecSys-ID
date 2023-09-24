@@ -1,0 +1,522 @@
+03/16/2023, 08:39:18: Namespace(seed=2022, data_dir='data/', logging_dir='log/CF/pretrain_t5_small_beauty_CF_number20_size500.log', model_dir='model/pretrain_t5_small_beauty_CF_number20_size500.pt', task='beauty', max_history=20, sequential_num=10, negative_sample=2, yes_no_sample=5, direct_item_proportion=2, train_sequential_item_batch=64, train_sequential_yesno_batch=48, train_direct_yesno_batch=48, train_direct_candidate_batch=12, train_direct_straightforward_batch=48, meta_title_batch=128, meta_description_batch=12, meta_category_batch=128, meta_epochs=10, meta_lr=0.0001, review_user_batch=16, review_item_batch=16, review_epochs=2, review_lr=0.0001, model_type='t5-small', epochs=20, lr=0.001, clip=1.0, logging_step=1000, warmup_prop=0.05, gradient_accumulation_steps=1, weight_decay=0.01, adam_eps=1e-06, dropout=0.1, alpha=2, multiGPU=True, distributed=True, gpu='5,6', local_rank=0, evaluation_method='sequential_item', evaluation_template_id=0, item_representation='CF', cluster_number=20, cluster_size=500, data_order='remapped_sequential', resolution=2, max_random_number=30000, min_random_number=1000, overlap=0, base=10, random_initialization_embedding=False, whole_word_embedding='shijie', no_pretrain=False, use_meta_data=False, use_review_data=False, remove_last_item=False, remove_first_item=False, eval_only=False, check_data=False)
+03/16/2023, 08:39:20: Process Launching at GPU 0
+03/16/2023, 08:39:20: Process Launching at GPU 1
+03/16/2023, 08:39:21: Building train loader at GPU 0
+03/16/2023, 08:39:21: loading data ...
+03/16/2023, 08:39:21: Building train loader at GPU 1
+03/16/2023, 08:39:21: *** use collaborative_filtering_based representation, extend vocab ***
+03/16/2023, 08:39:22: finished loading data
+03/16/2023, 08:39:22: length of training data is 10267
+03/16/2023, 08:39:22: loading model ...
+03/16/2023, 08:39:22: using only sequential data, and all possible sequences are here
+03/16/2023, 08:39:22: use pretrained T5
+03/16/2023, 08:39:28: Batch per epoch: 10267
+03/16/2023, 08:39:28: Total steps: 205340
+03/16/2023, 08:39:28: Warmup proportion:
+03/16/2023, 08:39:28: Warm up steps: 10267
+03/16/2023, 08:39:28: model dataparallel set
+03/16/2023, 08:39:28: start training
+03/16/2023, 08:39:28: ---------- training epoch 0 ----------
+03/16/2023, 08:41:57: total loss for 1000 steps : 5333.268499851227
+03/16/2023, 08:44:25: total loss for 2000 steps : 3389.045329093933
+03/16/2023, 08:46:53: total loss for 3000 steps : 2242.726236462593
+03/16/2023, 08:49:20: total loss for 4000 steps : 1677.208377480507
+03/16/2023, 08:51:47: total loss for 5000 steps : 1526.1796740293503
+03/16/2023, 08:54:15: total loss for 6000 steps : 1473.837583065033
+03/16/2023, 08:56:43: total loss for 7000 steps : 1443.4115227460861
+03/16/2023, 08:59:12: total loss for 8000 steps : 1420.6491521596909
+03/16/2023, 09:01:40: total loss for 9000 steps : 1401.0155942440033
+03/16/2023, 09:04:09: total loss for 10000 steps : 1386.2466126680374
+03/16/2023, 09:04:48: ---------- start evaluation after epoch 0 ----------
+03/16/2023, 09:07:59: validation hit @ 1 is 0.0
+03/16/2023, 09:07:59: validation hit @ 5 is 0.0
+03/16/2023, 09:07:59: validation hit @ 10 is 0.03308889286353067
+03/16/2023, 09:08:03: validation hit @ 1 is 0.0
+03/16/2023, 09:08:03: validation hit @ 5 is 0.0
+03/16/2023, 09:08:03: validation hit @ 10 is 0.03595063494902522
+03/16/2023, 09:11:09: test hit @ 1 is 0.0
+03/16/2023, 09:11:09: test hit @ 5 is 0.0
+03/16/2023, 09:11:09: test hit @ 10 is 0.02450366660704704
+03/16/2023, 09:11:09: recall increases from 0 ----> 0.03308889286353067 at epoch 0
+03/16/2023, 09:11:09: save current best model to best_model/pretrain_t5_small_beauty_CF_number20_size500.pt
+03/16/2023, 09:11:17: test hit @ 1 is 0.0
+03/16/2023, 09:11:17: test hit @ 5 is 0.0
+03/16/2023, 09:11:17: test hit @ 10 is 0.02405651940618852
+03/16/2023, 09:11:17: recall increases from 0 ----> 0.03595063494902522 at epoch 0
+03/16/2023, 09:11:17: ---------- training epoch 1 ----------
+03/16/2023, 09:13:05: total loss for 11000 steps : 1371.169489622116
+03/16/2023, 09:15:32: total loss for 12000 steps : 1356.3186746835709
+03/16/2023, 09:17:59: total loss for 13000 steps : 1345.4322464466095
+03/16/2023, 09:20:27: total loss for 14000 steps : 1334.251420378685
+03/16/2023, 09:22:55: total loss for 15000 steps : 1323.1535820960999
+03/16/2023, 09:25:22: total loss for 16000 steps : 1315.953318476677
+03/16/2023, 09:27:49: total loss for 17000 steps : 1305.1751682758331
+03/16/2023, 09:30:17: total loss for 18000 steps : 1296.1921261548996
+03/16/2023, 09:32:45: total loss for 19000 steps : 1293.046776175499
+03/16/2023, 09:35:14: total loss for 20000 steps : 1281.763567328453
+03/16/2023, 09:36:33: ---------- start evaluation after epoch 1 ----------
+03/16/2023, 09:39:46: validation hit @ 1 is 0.0
+03/16/2023, 09:39:46: validation hit @ 5 is 0.0
+03/16/2023, 09:39:46: validation hit @ 10 is 0.055893400107315326
+03/16/2023, 09:39:47: validation hit @ 1 is 0.0
+03/16/2023, 09:39:47: validation hit @ 5 is 0.0
+03/16/2023, 09:39:47: validation hit @ 10 is 0.05616168842783044
+03/16/2023, 09:42:57: test hit @ 1 is 0.0
+03/16/2023, 09:42:57: test hit @ 5 is 0.0
+03/16/2023, 09:42:57: test hit @ 10 is 0.043552137363620104
+03/16/2023, 09:42:57: recall increases from 0.03308889286353067 ----> 0.055893400107315326 at epoch 1
+03/16/2023, 09:42:57: save current best model to best_model/pretrain_t5_small_beauty_CF_number20_size500.pt
+03/16/2023, 09:43:01: test hit @ 1 is 0.0
+03/16/2023, 09:43:01: test hit @ 5 is 0.0
+03/16/2023, 09:43:01: test hit @ 10 is 0.038007512072974425
+03/16/2023, 09:43:01: recall increases from 0.03595063494902522 ----> 0.05616168842783044 at epoch 1
+03/16/2023, 09:43:01: ---------- training epoch 2 ----------
+03/16/2023, 09:44:10: total loss for 21000 steps : 1279.7007888555527
+03/16/2023, 09:46:38: total loss for 22000 steps : 1269.9439978599548
+03/16/2023, 09:49:07: total loss for 23000 steps : 1262.6117253303528
+03/16/2023, 09:51:35: total loss for 24000 steps : 1256.2264496088028
+03/16/2023, 09:54:05: total loss for 25000 steps : 1251.5468664169312
+03/16/2023, 09:56:34: total loss for 26000 steps : 1242.897900223732
+03/16/2023, 09:59:03: total loss for 27000 steps : 1239.7159156799316
+03/16/2023, 10:01:31: total loss for 28000 steps : 1230.985477924347
+03/16/2023, 10:03:58: total loss for 29000 steps : 1225.997518658638
+03/16/2023, 10:06:26: total loss for 30000 steps : 1220.7417335510254
+03/16/2023, 10:08:25: ---------- start evaluation after epoch 2 ----------
+03/16/2023, 10:11:38: validation hit @ 1 is 0.0
+03/16/2023, 10:11:38: validation hit @ 5 is 0.0
+03/16/2023, 10:11:38: validation hit @ 10 is 0.06993382221427294
+03/16/2023, 10:11:39: validation hit @ 1 is 0.0
+03/16/2023, 10:11:39: validation hit @ 5 is 0.0
+03/16/2023, 10:11:39: validation hit @ 10 is 0.07064925773564658
+03/16/2023, 10:14:49: test hit @ 1 is 0.0
+03/16/2023, 10:14:49: test hit @ 5 is 0.0
+03/16/2023, 10:14:49: test hit @ 10 is 0.0553568234662851
+03/16/2023, 10:14:49: recall increases from 0.055893400107315326 ----> 0.06993382221427294 at epoch 2
+03/16/2023, 10:14:49: save current best model to best_model/pretrain_t5_small_beauty_CF_number20_size500.pt
+03/16/2023, 10:14:55: test hit @ 1 is 0.0
+03/16/2023, 10:14:55: test hit @ 5 is 0.0
+03/16/2023, 10:14:55: test hit @ 10 is 0.05177964585941692
+03/16/2023, 10:14:55: recall increases from 0.05616168842783044 ----> 0.07064925773564658 at epoch 2
+03/16/2023, 10:14:55: ---------- training epoch 3 ----------
+03/16/2023, 10:15:24: total loss for 31000 steps : 1213.3631210327148
+03/16/2023, 10:17:52: total loss for 32000 steps : 1206.061388850212
+03/16/2023, 10:20:20: total loss for 33000 steps : 1199.8542152643204
+03/16/2023, 10:22:48: total loss for 34000 steps : 1194.0764842033386
+03/16/2023, 10:25:16: total loss for 35000 steps : 1185.4157255887985
+03/16/2023, 10:27:46: total loss for 36000 steps : 1180.9434270858765
+03/16/2023, 10:30:14: total loss for 37000 steps : 1177.348059296608
+03/16/2023, 10:32:42: total loss for 38000 steps : 1167.2623257637024
+03/16/2023, 10:35:09: total loss for 39000 steps : 1159.3378509879112
+03/16/2023, 10:37:37: total loss for 40000 steps : 1157.157101035118
+03/16/2023, 10:40:06: total loss for 41000 steps : 1148.4989660978317
+03/16/2023, 10:40:16: ---------- start evaluation after epoch 3 ----------
+03/16/2023, 10:43:27: validation hit @ 1 is 0.0
+03/16/2023, 10:43:27: validation hit @ 5 is 0.0
+03/16/2023, 10:43:27: validation hit @ 10 is 0.08155964943659452
+03/16/2023, 10:43:31: validation hit @ 1 is 0.0
+03/16/2023, 10:43:31: validation hit @ 5 is 0.0
+03/16/2023, 10:43:31: validation hit @ 10 is 0.08191736719728135
+03/16/2023, 10:46:38: test hit @ 1 is 0.0
+03/16/2023, 10:46:38: test hit @ 5 is 0.0
+03/16/2023, 10:46:38: test hit @ 10 is 0.06385262028259703
+03/16/2023, 10:46:38: recall increases from 0.06993382221427294 ----> 0.08155964943659452 at epoch 3
+03/16/2023, 10:46:38: save current best model to best_model/pretrain_t5_small_beauty_CF_number20_size500.pt
+03/16/2023, 10:46:45: test hit @ 1 is 0.0
+03/16/2023, 10:46:45: test hit @ 5 is 0.0
+03/16/2023, 10:46:45: test hit @ 10 is 0.05786084779109283
+03/16/2023, 10:46:45: recall increases from 0.07064925773564658 ----> 0.08191736719728135 at epoch 3
+03/16/2023, 10:46:45: ---------- training epoch 4 ----------
+03/16/2023, 10:49:03: total loss for 42000 steps : 1132.9190465211868
+03/16/2023, 10:51:31: total loss for 43000 steps : 1129.9399626255035
+03/16/2023, 10:53:58: total loss for 44000 steps : 1122.4914080500603
+03/16/2023, 10:56:26: total loss for 45000 steps : 1115.6628136634827
+03/16/2023, 10:58:54: total loss for 46000 steps : 1108.294729232788
+03/16/2023, 11:01:23: total loss for 47000 steps : 1098.877789914608
+03/16/2023, 11:03:51: total loss for 48000 steps : 1089.4401097893715
+03/16/2023, 11:06:19: total loss for 49000 steps : 1080.192588210106
+03/16/2023, 11:08:46: total loss for 50000 steps : 1077.507742702961
+03/16/2023, 11:11:13: total loss for 51000 steps : 1067.384933769703
+03/16/2023, 11:12:02: ---------- start evaluation after epoch 4 ----------
+03/16/2023, 11:15:14: validation hit @ 1 is 0.0
+03/16/2023, 11:15:14: validation hit @ 5 is 0.0
+03/16/2023, 11:15:14: validation hit @ 10 is 0.08245394383831157
+03/16/2023, 11:15:18: validation hit @ 1 is 0.0
+03/16/2023, 11:15:18: validation hit @ 5 is 0.0
+03/16/2023, 11:15:18: validation hit @ 10 is 0.09023430513324987
+03/16/2023, 11:18:26: test hit @ 1 is 0.0
+03/16/2023, 11:18:26: test hit @ 5 is 0.0
+03/16/2023, 11:18:26: test hit @ 10 is 0.06599892684671795
+03/16/2023, 11:18:26: recall increases from 0.08155964943659452 ----> 0.08245394383831157 at epoch 4
+03/16/2023, 11:18:26: save current best model to best_model/pretrain_t5_small_beauty_CF_number20_size500.pt
+03/16/2023, 11:18:33: test hit @ 1 is 0.0
+03/16/2023, 11:18:33: test hit @ 5 is 0.0
+03/16/2023, 11:18:33: test hit @ 10 is 0.06152745483813271
+03/16/2023, 11:18:33: recall increases from 0.08191736719728135 ----> 0.09023430513324987 at epoch 4
+03/16/2023, 11:18:33: ---------- training epoch 5 ----------
+03/16/2023, 11:20:11: total loss for 52000 steps : 1057.3690677285194
+03/16/2023, 11:22:39: total loss for 53000 steps : 1047.2309527993202
+03/16/2023, 11:25:06: total loss for 54000 steps : 1040.021447300911
+03/16/2023, 11:27:33: total loss for 55000 steps : 1028.8390576839447
+03/16/2023, 11:30:01: total loss for 56000 steps : 1020.949188888073
+03/16/2023, 11:32:30: total loss for 57000 steps : 1012.6469110250473
+03/16/2023, 11:34:58: total loss for 58000 steps : 1002.0168551802635
+03/16/2023, 11:37:27: total loss for 59000 steps : 992.4735413193703
+03/16/2023, 11:39:55: total loss for 60000 steps : 986.3870021104813
+03/16/2023, 11:42:23: total loss for 61000 steps : 976.61544495821
+03/16/2023, 11:43:52: ---------- start evaluation after epoch 5 ----------
+03/16/2023, 11:47:04: validation hit @ 1 is 0.0
+03/16/2023, 11:47:04: validation hit @ 5 is 0.0
+03/16/2023, 11:47:04: validation hit @ 10 is 0.08638883920586657
+03/16/2023, 11:47:07: validation hit @ 1 is 0.0
+03/16/2023, 11:47:07: validation hit @ 5 is 0.0
+03/16/2023, 11:47:07: validation hit @ 10 is 0.09255947057771419
+03/16/2023, 11:50:15: test hit @ 1 is 0.0
+03/16/2023, 11:50:15: test hit @ 5 is 0.0
+03/16/2023, 11:50:15: test hit @ 10 is 0.07002325165444465
+03/16/2023, 11:50:15: recall increases from 0.08245394383831157 ----> 0.08638883920586657 at epoch 5
+03/16/2023, 11:50:15: save current best model to best_model/pretrain_t5_small_beauty_CF_number20_size500.pt
+03/16/2023, 11:50:24: test hit @ 1 is 0.0
+03/16/2023, 11:50:24: test hit @ 5 is 0.0
+03/16/2023, 11:50:24: test hit @ 10 is 0.06358433196208192
+03/16/2023, 11:50:24: recall increases from 0.09023430513324987 ----> 0.09255947057771419 at epoch 5
+03/16/2023, 11:50:24: ---------- training epoch 6 ----------
+03/16/2023, 11:51:24: total loss for 62000 steps : 966.211760699749
+03/16/2023, 11:53:52: total loss for 63000 steps : 953.5258516073227
+03/16/2023, 11:56:20: total loss for 64000 steps : 945.5349447727203
+03/16/2023, 11:58:48: total loss for 65000 steps : 931.8216733336449
+03/16/2023, 12:01:16: total loss for 66000 steps : 926.3939684033394
+03/16/2023, 12:03:44: total loss for 67000 steps : 915.1259590983391
+03/16/2023, 12:06:13: total loss for 68000 steps : 901.6335625648499
+03/16/2023, 12:08:41: total loss for 69000 steps : 892.9548072814941
+03/16/2023, 12:11:10: total loss for 70000 steps : 882.3826141953468
+03/16/2023, 12:13:37: total loss for 71000 steps : 873.2583186626434
+03/16/2023, 12:15:45: ---------- start evaluation after epoch 6 ----------
+03/16/2023, 12:18:56: validation hit @ 1 is 0.0
+03/16/2023, 12:18:56: validation hit @ 5 is 0.0
+03/16/2023, 12:18:56: validation hit @ 10 is 0.08316937935968521
+03/16/2023, 12:18:59: validation hit @ 1 is 0.0
+03/16/2023, 12:18:59: validation hit @ 5 is 0.0
+03/16/2023, 12:18:59: validation hit @ 10 is 0.09345376497943123
+03/16/2023, 12:22:08: test hit @ 1 is 0.0
+03/16/2023, 12:22:08: test hit @ 5 is 0.0
+03/16/2023, 12:22:08: test hit @ 10 is 0.06242174923984976
+03/16/2023, 12:22:15: test hit @ 1 is 0.0
+03/16/2023, 12:22:15: test hit @ 5 is 0.0
+03/16/2023, 12:22:15: test hit @ 10 is 0.06269003756036487
+03/16/2023, 12:22:15: recall increases from 0.09255947057771419 ----> 0.09345376497943123 at epoch 6
+03/16/2023, 12:22:15: ---------- training epoch 7 ----------
+03/16/2023, 12:22:35: total loss for 72000 steps : 859.3011080622673
+03/16/2023, 12:25:03: total loss for 73000 steps : 845.7055885195732
+03/16/2023, 12:27:31: total loss for 74000 steps : 836.8615388274193
+03/16/2023, 12:29:58: total loss for 75000 steps : 824.6800919175148
+03/16/2023, 12:32:26: total loss for 76000 steps : 817.0605873465538
+03/16/2023, 12:34:54: total loss for 77000 steps : 805.373880803585
+03/16/2023, 12:37:23: total loss for 78000 steps : 793.652606010437
+03/16/2023, 12:39:51: total loss for 79000 steps : 783.7258448004723
+03/16/2023, 12:42:20: total loss for 80000 steps : 774.3702333569527
+03/16/2023, 12:44:48: total loss for 81000 steps : 763.7892901301384
+03/16/2023, 12:47:16: total loss for 82000 steps : 752.3842042088509
+03/16/2023, 12:47:36: ---------- start evaluation after epoch 7 ----------
+03/16/2023, 12:50:45: validation hit @ 1 is 0.0
+03/16/2023, 12:50:45: validation hit @ 5 is 0.0
+03/16/2023, 12:50:45: validation hit @ 10 is 0.07994991951350384
+03/16/2023, 12:50:50: validation hit @ 1 is 0.0
+03/16/2023, 12:50:50: validation hit @ 5 is 0.0
+03/16/2023, 12:50:50: validation hit @ 10 is 0.088982292970846
+03/16/2023, 12:53:58: test hit @ 1 is 0.0
+03/16/2023, 12:53:58: test hit @ 5 is 0.0
+03/16/2023, 12:53:58: test hit @ 10 is 0.05473081738508317
+03/16/2023, 12:54:05: test hit @ 1 is 0.0
+03/16/2023, 12:54:05: test hit @ 5 is 0.0
+03/16/2023, 12:54:05: test hit @ 10 is 0.06161688427830442
+03/16/2023, 12:54:05: ---------- training epoch 8 ----------
+03/16/2023, 12:56:13: total loss for 83000 steps : 738.7285937666893
+03/16/2023, 12:58:41: total loss for 84000 steps : 726.2578086256981
+03/16/2023, 13:01:09: total loss for 85000 steps : 718.9905792474747
+03/16/2023, 13:03:36: total loss for 86000 steps : 707.9145833849907
+03/16/2023, 13:06:05: total loss for 87000 steps : 695.1898760199547
+03/16/2023, 13:08:34: total loss for 88000 steps : 685.9852894544601
+03/16/2023, 13:11:03: total loss for 89000 steps : 675.6254097223282
+03/16/2023, 13:13:32: total loss for 90000 steps : 666.3505858778954
+03/16/2023, 13:16:01: total loss for 91000 steps : 656.7722662687302
+03/16/2023, 13:18:30: total loss for 92000 steps : 645.231714963913
+03/16/2023, 13:19:30: ---------- start evaluation after epoch 8 ----------
+03/16/2023, 13:22:41: validation hit @ 1 is 0.0
+03/16/2023, 13:22:41: validation hit @ 5 is 0.0
+03/16/2023, 13:22:41: validation hit @ 10 is 0.07637274190663566
+03/16/2023, 13:22:45: validation hit @ 1 is 0.0
+03/16/2023, 13:22:45: validation hit @ 5 is 0.0
+03/16/2023, 13:22:45: validation hit @ 10 is 0.08656769808620998
+03/16/2023, 13:25:51: test hit @ 1 is 0.0
+03/16/2023, 13:25:51: test hit @ 5 is 0.0
+03/16/2023, 13:25:51: test hit @ 10 is 0.05464138794491147
+03/16/2023, 13:25:59: test hit @ 1 is 0.0
+03/16/2023, 13:25:59: test hit @ 5 is 0.0
+03/16/2023, 13:25:59: test hit @ 10 is 0.05947057771418351
+03/16/2023, 13:25:59: ---------- training epoch 9 ----------
+03/16/2023, 13:27:28: total loss for 93000 steps : 630.1410112977028
+03/16/2023, 13:29:57: total loss for 94000 steps : 620.9018435776234
+03/16/2023, 13:32:26: total loss for 95000 steps : 613.1647700667381
+03/16/2023, 13:34:54: total loss for 96000 steps : 602.3965206742287
+03/16/2023, 13:37:23: total loss for 97000 steps : 592.5188336074352
+03/16/2023, 13:39:52: total loss for 98000 steps : 583.9914760291576
+03/16/2023, 13:42:21: total loss for 99000 steps : 577.3427932858467
+03/16/2023, 13:44:50: total loss for 100000 steps : 562.4160178899765
+03/16/2023, 13:47:19: total loss for 101000 steps : 557.4837478995323
+03/16/2023, 13:49:48: total loss for 102000 steps : 546.7375991046429
+03/16/2023, 13:51:28: ---------- start evaluation after epoch 9 ----------
+03/16/2023, 13:54:40: validation hit @ 1 is 0.0
+03/16/2023, 13:54:40: validation hit @ 5 is 0.0
+03/16/2023, 13:54:40: validation hit @ 10 is 0.07261670541942407
+03/16/2023, 13:54:43: validation hit @ 1 is 0.0
+03/16/2023, 13:54:43: validation hit @ 5 is 0.0
+03/16/2023, 13:54:43: validation hit @ 10 is 0.0791450545519585
+03/16/2023, 13:57:50: test hit @ 1 is 0.0
+03/16/2023, 13:57:50: test hit @ 5 is 0.0
+03/16/2023, 13:57:50: test hit @ 10 is 0.051869075299588625
+03/16/2023, 13:57:57: test hit @ 1 is 0.0
+03/16/2023, 13:57:57: test hit @ 5 is 0.0
+03/16/2023, 13:57:57: test hit @ 10 is 0.05508853514576999
+03/16/2023, 13:57:57: ---------- training epoch 10 ----------
+03/16/2023, 13:58:45: total loss for 103000 steps : 534.2247393727303
+03/16/2023, 14:01:14: total loss for 104000 steps : 524.1423771679401
+03/16/2023, 14:03:42: total loss for 105000 steps : 515.919895529747
+03/16/2023, 14:06:10: total loss for 106000 steps : 508.19803777337074
+03/16/2023, 14:08:38: total loss for 107000 steps : 499.96804559230804
+03/16/2023, 14:11:08: total loss for 108000 steps : 492.7752634584904
+03/16/2023, 14:13:37: total loss for 109000 steps : 480.8217813074589
+03/16/2023, 14:16:07: total loss for 110000 steps : 474.2590039372444
+03/16/2023, 14:18:36: total loss for 111000 steps : 467.4686321616173
+03/16/2023, 14:21:05: total loss for 112000 steps : 458.35429057478905
+03/16/2023, 14:23:25: ---------- start evaluation after epoch 10 ----------
+03/16/2023, 14:26:38: validation hit @ 1 is 0.0
+03/16/2023, 14:26:38: validation hit @ 5 is 0.0
+03/16/2023, 14:26:38: validation hit @ 10 is 0.0710964049365051
+03/16/2023, 14:26:41: validation hit @ 1 is 0.0
+03/16/2023, 14:26:41: validation hit @ 5 is 0.0
+03/16/2023, 14:26:41: validation hit @ 10 is 0.07771418350921123
+03/16/2023, 14:29:49: test hit @ 1 is 0.0
+03/16/2023, 14:29:49: test hit @ 5 is 0.0
+03/16/2023, 14:29:49: test hit @ 10 is 0.050438204256841354
+03/16/2023, 14:29:55: test hit @ 1 is 0.0
+03/16/2023, 14:29:55: test hit @ 5 is 0.0
+03/16/2023, 14:29:55: test hit @ 10 is 0.05437309962439635
+03/16/2023, 14:29:55: ---------- training epoch 11 ----------
+03/16/2023, 14:30:04: total loss for 113000 steps : 448.06857854127884
+03/16/2023, 14:32:33: total loss for 114000 steps : 439.71444368362427
+03/16/2023, 14:35:03: total loss for 115000 steps : 430.5351162850857
+03/16/2023, 14:37:31: total loss for 116000 steps : 424.2181369662285
+03/16/2023, 14:40:00: total loss for 117000 steps : 416.692987293005
+03/16/2023, 14:42:29: total loss for 118000 steps : 409.6873385608196
+03/16/2023, 14:44:59: total loss for 119000 steps : 399.67070615291595
+03/16/2023, 14:47:29: total loss for 120000 steps : 394.0506125986576
+03/16/2023, 14:49:58: total loss for 121000 steps : 385.30866369605064
+03/16/2023, 14:52:27: total loss for 122000 steps : 380.2497361302376
+03/16/2023, 14:54:57: total loss for 123000 steps : 372.49526304006577
+03/16/2023, 14:55:27: ---------- start evaluation after epoch 11 ----------
+03/16/2023, 14:58:40: validation hit @ 1 is 0.0
+03/16/2023, 14:58:40: validation hit @ 5 is 0.0
+03/16/2023, 14:58:40: validation hit @ 10 is 0.06787694509032373
+03/16/2023, 14:58:45: validation hit @ 1 is 0.0
+03/16/2023, 14:58:45: validation hit @ 5 is 0.0
+03/16/2023, 14:58:45: validation hit @ 10 is 0.07431586478268647
+03/16/2023, 15:01:52: test hit @ 1 is 0.0
+03/16/2023, 15:01:52: test hit @ 5 is 0.0
+03/16/2023, 15:01:52: test hit @ 10 is 0.0455195850473976
+03/16/2023, 15:02:00: test hit @ 1 is 0.0
+03/16/2023, 15:02:00: test hit @ 5 is 0.0
+03/16/2023, 15:02:00: test hit @ 10 is 0.05025934537649794
+03/16/2023, 15:02:00: ---------- training epoch 12 ----------
+03/16/2023, 15:03:58: total loss for 124000 steps : 361.32462722063065
+03/16/2023, 15:06:27: total loss for 125000 steps : 357.5307774245739
+03/16/2023, 15:08:57: total loss for 126000 steps : 346.86987233161926
+03/16/2023, 15:11:26: total loss for 127000 steps : 343.1100818514824
+03/16/2023, 15:13:56: total loss for 128000 steps : 335.10390089452267
+03/16/2023, 15:16:27: total loss for 129000 steps : 331.17642334103584
+03/16/2023, 15:18:58: total loss for 130000 steps : 325.6621292680502
+03/16/2023, 15:21:28: total loss for 131000 steps : 318.56317637860775
+03/16/2023, 15:23:59: total loss for 132000 steps : 312.76893089711666
+03/16/2023, 15:26:30: total loss for 133000 steps : 305.5068203508854
+03/16/2023, 15:27:41: ---------- start evaluation after epoch 12 ----------
+03/16/2023, 15:30:56: validation hit @ 1 is 0.0
+03/16/2023, 15:30:56: validation hit @ 5 is 0.0
+03/16/2023, 15:30:56: validation hit @ 10 is 0.06501520300482919
+03/16/2023, 15:30:59: validation hit @ 1 is 0.0
+03/16/2023, 15:30:59: validation hit @ 5 is 0.0
+03/16/2023, 15:30:59: validation hit @ 10 is 0.0730638526202826
+03/16/2023, 15:34:09: test hit @ 1 is 0.0
+03/16/2023, 15:34:09: test hit @ 5 is 0.0
+03/16/2023, 15:34:09: test hit @ 10 is 0.046771597209801466
+03/16/2023, 15:34:12: test hit @ 1 is 0.0
+03/16/2023, 15:34:12: test hit @ 5 is 0.0
+03/16/2023, 15:34:12: test hit @ 10 is 0.04999105705598283
+03/16/2023, 15:34:12: ---------- training epoch 13 ----------
+03/16/2023, 15:35:31: total loss for 134000 steps : 298.0609811991453
+03/16/2023, 15:38:00: total loss for 135000 steps : 292.5411345362663
+03/16/2023, 15:40:29: total loss for 136000 steps : 286.4381342679262
+03/16/2023, 15:42:58: total loss for 137000 steps : 282.19073213636875
+03/16/2023, 15:45:27: total loss for 138000 steps : 275.13058787584305
+03/16/2023, 15:47:57: total loss for 139000 steps : 270.3207170665264
+03/16/2023, 15:50:27: total loss for 140000 steps : 263.5859293937683
+03/16/2023, 15:52:58: total loss for 141000 steps : 260.2003017961979
+03/16/2023, 15:55:30: total loss for 142000 steps : 254.1177174448967
+03/16/2023, 15:58:01: total loss for 143000 steps : 250.11160564422607
+03/16/2023, 15:59:52: ---------- start evaluation after epoch 13 ----------
+03/16/2023, 16:03:07: validation hit @ 1 is 0.0
+03/16/2023, 16:03:07: validation hit @ 5 is 0.0
+03/16/2023, 16:03:07: validation hit @ 10 is 0.06626721516723305
+03/16/2023, 16:03:09: validation hit @ 1 is 0.0
+03/16/2023, 16:03:09: validation hit @ 5 is 0.0
+03/16/2023, 16:03:09: validation hit @ 10 is 0.06948667501341442
+03/16/2023, 16:06:21: test hit @ 1 is 0.0
+03/16/2023, 16:06:21: test hit @ 5 is 0.0
+03/16/2023, 16:06:21: test hit @ 10 is 0.04212126632087283
+03/16/2023, 16:06:23: test hit @ 1 is 0.0
+03/16/2023, 16:06:23: test hit @ 5 is 0.0
+03/16/2023, 16:06:23: test hit @ 10 is 0.04784475049186192
+03/16/2023, 16:06:23: ---------- training epoch 14 ----------
+03/16/2023, 16:07:02: total loss for 144000 steps : 241.84776528179646
+03/16/2023, 16:09:31: total loss for 145000 steps : 238.62872849404812
+03/16/2023, 16:12:01: total loss for 146000 steps : 234.38216198980808
+03/16/2023, 16:14:30: total loss for 147000 steps : 226.9233144670725
+03/16/2023, 16:16:59: total loss for 148000 steps : 224.08209632337093
+03/16/2023, 16:19:29: total loss for 149000 steps : 219.6569647192955
+03/16/2023, 16:21:59: total loss for 150000 steps : 215.3499340713024
+03/16/2023, 16:24:29: total loss for 151000 steps : 209.60075137019157
+03/16/2023, 16:27:00: total loss for 152000 steps : 206.65576623380184
+03/16/2023, 16:29:31: total loss for 153000 steps : 201.9285864830017
+03/16/2023, 16:32:01: total loss for 154000 steps : 199.01107121258974
+03/16/2023, 16:32:02: ---------- start evaluation after epoch 14 ----------
+03/16/2023, 16:35:16: validation hit @ 1 is 0.0
+03/16/2023, 16:35:16: validation hit @ 5 is 0.0
+03/16/2023, 16:35:16: validation hit @ 10 is 0.07055982829547487
+03/16/2023, 16:35:17: validation hit @ 1 is 0.0
+03/16/2023, 16:35:17: validation hit @ 5 is 0.0
+03/16/2023, 16:35:17: validation hit @ 10 is 0.06483634412448579
+03/16/2023, 16:38:30: test hit @ 1 is 0.0
+03/16/2023, 16:38:30: test hit @ 5 is 0.0
+03/16/2023, 16:38:30: test hit @ 10 is 0.050438204256841354
+03/16/2023, 16:38:33: test hit @ 1 is 0.0
+03/16/2023, 16:38:33: test hit @ 5 is 0.0
+03/16/2023, 16:38:33: test hit @ 10 is 0.04373099624396351
+03/16/2023, 16:38:33: ---------- training epoch 15 ----------
+03/16/2023, 16:41:03: total loss for 155000 steps : 191.20711283385754
+03/16/2023, 16:43:32: total loss for 156000 steps : 188.24649369716644
+03/16/2023, 16:46:01: total loss for 157000 steps : 185.85974096506834
+03/16/2023, 16:48:29: total loss for 158000 steps : 179.14599941670895
+03/16/2023, 16:50:58: total loss for 159000 steps : 176.54155481606722
+03/16/2023, 16:53:28: total loss for 160000 steps : 172.1943610087037
+03/16/2023, 16:55:59: total loss for 161000 steps : 167.54756926745176
+03/16/2023, 16:58:29: total loss for 162000 steps : 164.9925147742033
+03/16/2023, 17:00:59: total loss for 163000 steps : 161.7053345143795
+03/16/2023, 17:03:29: total loss for 164000 steps : 157.94114518910646
+03/16/2023, 17:04:10: ---------- start evaluation after epoch 15 ----------
+03/16/2023, 17:07:25: validation hit @ 1 is 0.0
+03/16/2023, 17:07:25: validation hit @ 5 is 0.0
+03/16/2023, 17:07:25: validation hit @ 10 is 0.06635664460740476
+03/16/2023, 17:07:26: validation hit @ 1 is 0.0
+03/16/2023, 17:07:26: validation hit @ 5 is 0.0
+03/16/2023, 17:07:26: validation hit @ 10 is 0.06224289035950635
+03/16/2023, 17:10:39: test hit @ 1 is 0.0
+03/16/2023, 17:10:39: test hit @ 5 is 0.0
+03/16/2023, 17:10:39: test hit @ 10 is 0.04632445000894295
+03/16/2023, 17:10:41: test hit @ 1 is 0.0
+03/16/2023, 17:10:41: test hit @ 5 is 0.0
+03/16/2023, 17:10:41: test hit @ 10 is 0.04113754247898408
+03/16/2023, 17:10:41: ---------- training epoch 16 ----------
+03/16/2023, 17:12:30: total loss for 165000 steps : 153.32803409546614
+03/16/2023, 17:14:59: total loss for 166000 steps : 150.30155935138464
+03/16/2023, 17:17:27: total loss for 167000 steps : 147.13207808881998
+03/16/2023, 17:19:54: total loss for 168000 steps : 144.93502286821604
+03/16/2023, 17:22:23: total loss for 169000 steps : 140.25762740522623
+03/16/2023, 17:24:52: total loss for 170000 steps : 138.19598362594843
+03/16/2023, 17:27:23: total loss for 171000 steps : 134.48599027842283
+03/16/2023, 17:29:52: total loss for 172000 steps : 132.16898370534182
+03/16/2023, 17:32:22: total loss for 173000 steps : 128.97927521169186
+03/16/2023, 17:34:52: total loss for 174000 steps : 125.8728819489479
+03/16/2023, 17:36:13: ---------- start evaluation after epoch 16 ----------
+03/16/2023, 17:39:26: validation hit @ 1 is 0.0
+03/16/2023, 17:39:26: validation hit @ 5 is 0.0
+03/16/2023, 17:39:26: validation hit @ 10 is 0.06564120908603112
+03/16/2023, 17:39:29: validation hit @ 1 is 0.0
+03/16/2023, 17:39:29: validation hit @ 5 is 0.0
+03/16/2023, 17:39:29: validation hit @ 10 is 0.06090144875693078
+03/16/2023, 17:42:38: test hit @ 1 is 0.0
+03/16/2023, 17:42:38: test hit @ 5 is 0.0
+03/16/2023, 17:42:38: test hit @ 10 is 0.044535861205508856
+03/16/2023, 17:42:44: test hit @ 1 is 0.0
+03/16/2023, 17:42:44: test hit @ 5 is 0.0
+03/16/2023, 17:42:44: test hit @ 10 is 0.03836522983366124
+03/16/2023, 17:42:44: ---------- training epoch 17 ----------
+03/16/2023, 17:43:53: total loss for 175000 steps : 122.95936501771212
+03/16/2023, 17:46:23: total loss for 176000 steps : 120.38162273168564
+03/16/2023, 17:48:52: total loss for 177000 steps : 117.79407918080688
+03/16/2023, 17:51:19: total loss for 178000 steps : 114.53957018256187
+03/16/2023, 17:53:46: total loss for 179000 steps : 112.93286066874862
+03/16/2023, 17:56:15: total loss for 180000 steps : 109.64771736040711
+03/16/2023, 17:58:44: total loss for 181000 steps : 106.40112938731909
+03/16/2023, 18:01:14: total loss for 182000 steps : 105.10246169194579
+03/16/2023, 18:03:43: total loss for 183000 steps : 102.73273342847824
+03/16/2023, 18:06:13: total loss for 184000 steps : 101.11837147548795
+03/16/2023, 18:08:13: ---------- start evaluation after epoch 17 ----------
+03/16/2023, 18:11:27: validation hit @ 1 is 0.0
+03/16/2023, 18:11:27: validation hit @ 5 is 0.0
+03/16/2023, 18:11:27: validation hit @ 10 is 0.06698265068860669
+03/16/2023, 18:11:30: validation hit @ 1 is 0.0
+03/16/2023, 18:11:30: validation hit @ 5 is 0.0
+03/16/2023, 18:11:30: validation hit @ 10 is 0.0612591665176176
+03/16/2023, 18:14:40: test hit @ 1 is 0.0
+03/16/2023, 18:14:40: test hit @ 5 is 0.0
+03/16/2023, 18:14:40: test hit @ 10 is 0.04507243784653908
+03/16/2023, 18:14:46: test hit @ 1 is 0.0
+03/16/2023, 18:14:46: test hit @ 5 is 0.0
+03/16/2023, 18:14:46: test hit @ 10 is 0.03872294759434806
+03/16/2023, 18:14:46: ---------- training epoch 18 ----------
+03/16/2023, 18:15:15: total loss for 185000 steps : 97.92105177044868
+03/16/2023, 18:17:44: total loss for 186000 steps : 96.20884222909808
+03/16/2023, 18:20:13: total loss for 187000 steps : 92.46777776628733
+03/16/2023, 18:22:41: total loss for 188000 steps : 90.92662408575416
+03/16/2023, 18:25:07: total loss for 189000 steps : 90.12067133560777
+03/16/2023, 18:27:34: total loss for 190000 steps : 87.26417985185981
+03/16/2023, 18:30:02: total loss for 191000 steps : 85.73250932991505
+03/16/2023, 18:32:31: total loss for 192000 steps : 83.89312728494406
+03/16/2023, 18:35:00: total loss for 193000 steps : 81.8454123660922
+03/16/2023, 18:37:29: total loss for 194000 steps : 81.00096695497632
+03/16/2023, 18:39:58: total loss for 195000 steps : 79.65607340633869
+03/16/2023, 18:40:09: ---------- start evaluation after epoch 18 ----------
+03/16/2023, 18:43:22: validation hit @ 1 is 0.0
+03/16/2023, 18:43:22: validation hit @ 5 is 0.0
+03/16/2023, 18:43:22: validation hit @ 10 is 0.06635664460740476
+03/16/2023, 18:43:25: validation hit @ 1 is 0.0
+03/16/2023, 18:43:25: validation hit @ 5 is 0.0
+03/16/2023, 18:43:25: validation hit @ 10 is 0.06269003756036487
+03/16/2023, 18:46:35: test hit @ 1 is 0.0
+03/16/2023, 18:46:35: test hit @ 5 is 0.0
+03/16/2023, 18:46:35: test hit @ 10 is 0.04426757288499374
+03/16/2023, 18:46:40: test hit @ 1 is 0.0
+03/16/2023, 18:46:40: test hit @ 5 is 0.0
+03/16/2023, 18:46:40: test hit @ 10 is 0.03934895367554999
+03/16/2023, 18:46:40: ---------- training epoch 19 ----------
+03/16/2023, 18:48:59: total loss for 196000 steps : 78.24440614506602
+03/16/2023, 18:51:29: total loss for 197000 steps : 75.23050384782255
+03/16/2023, 18:53:59: total loss for 198000 steps : 73.59954770281911
+03/16/2023, 18:56:26: total loss for 199000 steps : 72.9596529752016
+03/16/2023, 18:58:53: total loss for 200000 steps : 71.98888774588704
+03/16/2023, 19:01:20: total loss for 201000 steps : 71.27027636021376
+03/16/2023, 19:03:50: total loss for 202000 steps : 70.69250074215233
+03/16/2023, 19:06:19: total loss for 203000 steps : 69.20834469422698
+03/16/2023, 19:08:48: total loss for 204000 steps : 68.51154357008636
+03/16/2023, 19:11:17: total loss for 205000 steps : 66.78662259690464
+03/16/2023, 19:12:08: ---------- start evaluation after epoch 19 ----------
+03/16/2023, 19:15:21: validation hit @ 1 is 0.0
+03/16/2023, 19:15:21: validation hit @ 5 is 0.0
+03/16/2023, 19:15:21: validation hit @ 10 is 0.06653550348774817
+03/16/2023, 19:15:24: validation hit @ 1 is 0.0
+03/16/2023, 19:15:24: validation hit @ 5 is 0.0
+03/16/2023, 19:15:24: validation hit @ 10 is 0.06224289035950635
+03/16/2023, 19:18:34: test hit @ 1 is 0.0
+03/16/2023, 19:18:34: test hit @ 5 is 0.0
+03/16/2023, 19:18:34: test hit @ 10 is 0.043909855124306924
+03/16/2023, 19:18:39: test hit @ 1 is 0.0
+03/16/2023, 19:18:39: test hit @ 5 is 0.0
+03/16/2023, 19:18:39: test hit @ 10 is 0.03872294759434806
