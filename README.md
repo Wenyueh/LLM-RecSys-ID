@@ -32,6 +32,14 @@ CUDA Version: 11.7.
 
 Variations in performance may occur using different environments or GPUs. You may need to tune the hyperparameters in such a case.
 
+# Potential bugs you would meet
+
+If you met a bug about model_kwargs: 
+```
+ValueError: The following model_kwargs are not used by the model: ['whole_word_embedding_type'] (note: typos in the generate arguments will also show up in this list)
+```
+Check Issue #2.
+
 # Log files
 All experiment log files are under the log directory. 
 
