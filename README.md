@@ -38,7 +38,7 @@ If you met a bug about model_kwargs:
 ```
 ValueError: The following model_kwargs are not used by the model: ['whole_word_embedding_type'] (note: typos in the generate arguments will also show up in this list)
 ```
-Check Issue #2.
+Check [Issue #2](https://github.com/Wenyueh/LLM-RecSys-ID/issues/2).
 
 # Log files
 All experiment log files are under the log directory. 
