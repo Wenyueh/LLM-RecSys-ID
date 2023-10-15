@@ -13,7 +13,7 @@ A relevant repo (OpenP5) of benchmarking foundation models for recommendation is
 
 Recommendation foundation models utilize large language models as their backbone, converting recommendation tasks into natural language tasks. Items are represented as texts and tokenized by language model tokenizers, resulting in multiple tokens and corresponding embeddings for each item, in contrast to the single vector representations in traditional recommender systems. Therefore, creating item ID indexing compatible with language models is essential for recommendation foundation models. In this study, we systematically examine the item indexing problem for recommendation foundation models, using P5 as the representative backbone model and replicating its results with various indexing methods. To emphasize the importance of item indexing, we discuss the issues of several basic methods, such as independent indexing, title indexing, and random indexing, from empirical perspectives. We then propose four simple yet effective solutions, including sequential indexing, collaborative indexing, semantic (content-based) indexing, and hybrid indexing. Our reproducibility study of P5 highlights the significant influence of indexing methods on the model performance, and our results on real-world datasets validate the effectiveness of our proposed solutions.
 
-<img width="911" alt="Screen Shot 2023-04-24 at 1 58 10 PM" src="https://user-images.githubusercontent.com/28013619/234078088-3d020437-cf7b-4063-bf8b-940d8fa44dd6.png">
+<img width="900" alt="LLM-RecSys-ID" src="image/LLM-RecSys-ID.png">
 
 # Before running script
 
